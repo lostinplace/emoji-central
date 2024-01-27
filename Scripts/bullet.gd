@@ -27,14 +27,8 @@ var JokeTypes = jt.JokeTypes
 
 var my_joketype = -1
 
-func set_joketype(type: int):
-	my_joketype = type
-	var row = floor(type/4)
-	var col = type % 4
-	
-	
-	
-	var rect = gs.get_sprite_rect(row, col)
+func set_joketype(my_joketype: int):
+	var rect = gs.get_sprite_rect(my_joketype)
 	$Sprite2D.region_rect = rect
 	
 

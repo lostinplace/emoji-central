@@ -30,7 +30,7 @@ class JokeHopper:
 					break
 	
 	func get_sprite_rects() -> Array[Rect2]:
-		var spritesheet_control = preload("res://Scripts/garbage_spritesheet.gd").instance()
+		var spritesheet_control = preload("res://Scripts/garbage_spritesheet.gd")
 		var result: Array[Rect2] = []
 		for joke_type in joke_queue:
 			var rect = spritesheet_control.get_sprite_rect(joke_type)
