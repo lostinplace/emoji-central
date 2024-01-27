@@ -1,6 +1,7 @@
 extends Area2D
 
 var velocity
+var speed = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,3 +13,4 @@ func _process(delta):
 
 func _physics_process(delta):
 	global_position += velocity * delta
+	global_position += velocity * speed
