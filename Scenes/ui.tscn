@@ -11,33 +11,33 @@ grow_horizontal = 2
 script = ExtResource("1_7nm6v")
 
 [node name="P0Panel" parent="." instance=ExtResource("6_uxkvl")]
-offset_left = 17.0
-offset_top = 11.0
-offset_right = 17.0
-offset_bottom = 11.0
+offset_left = 52.0
+offset_top = -16.0
+offset_right = 52.0
+offset_bottom = -16.0
 scale = Vector2(0.418797, 0.41629)
 metadata/PlayerName = "P0"
 
 [node name="P1Panel" parent="." instance=ExtResource("6_uxkvl")]
-offset_left = 1688.0
-offset_top = 7.0
-offset_right = 1688.0
-offset_bottom = 7.0
+offset_left = 1744.0
+offset_top = -16.0
+offset_right = 1744.0
+offset_bottom = -16.0
 scale = Vector2(0.418797, 0.41629)
 metadata/PlayerName = "P1"
 
 [node name="P2Panel" parent="." instance=ExtResource("6_uxkvl")]
-offset_left = 20.0
-offset_top = 526.0
-offset_right = 20.0
-offset_bottom = 526.0
+offset_left = 52.0
+offset_top = 560.0
+offset_right = 52.0
+offset_bottom = 560.0
 scale = Vector2(0.418797, 0.41629)
 metadata/PlayerName = "P2"
 
 [node name="P3Panel" parent="." instance=ExtResource("6_uxkvl")]
-offset_left = 1687.0
-offset_top = 525.0
-offset_right = 1687.0
-offset_bottom = 525.0
+offset_left = 1743.0
+offset_top = 560.0
+offset_right = 1743.0
+offset_bottom = 560.0
 scale = Vector2(0.418797, 0.41629)
 metadata/PlayerName = "P3"
