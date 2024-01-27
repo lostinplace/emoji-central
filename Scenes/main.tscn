@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://4t8lltp0c75x"]
+
+[ext_resource type="Texture2D" uid="uid://dba4sc5670y6r" path="res://Assets/background.png" id="1_nqx3h"]
+[ext_resource type="PackedScene" uid="uid://sj575hj0a0eh" path="res://Scenes/player.tscn" id="2_8f3pn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nqx3h")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_8f3pn")]
+position = Vector2(-45, -54)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.65, 0.65)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
