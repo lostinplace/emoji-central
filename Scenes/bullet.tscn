@@ -1,24 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmmi5oa7mixlj"]
+[gd_scene load_steps=3 format=3 uid="uid://bmmi5oa7mixlj"]
 
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_w8hf8"]
-[ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_bn4gi"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_v5e6l"]
+[ext_resource type="Texture2D" uid="uid://bke6c57637hf1" path="res://Assets/spritesheet.png" id="2_rvxdd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hhw0u"]
-
-[node name="RigidBody2D" type="RigidBody2D" groups=["BulletGroup"]]
-collision_layer = 3
-collision_mask = 4
-mass = 0.01
+[node name="RigidBody2D" type="RigidBody2D"]
 gravity_scale = 0.0
-script = ExtResource("1_w8hf8")
+script = ExtResource("1_v5e6l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_bn4gi")
-hframes = 8
-vframes = 4
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_rvxdd")
+region_enabled = true
+region_rect = Rect2(0, 0, 131, 143)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3, 3)
-shape = SubResource("CircleShape2D_hhw0u")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcbda12f-9aae-49ec-9030-72978389ae40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/libraries/GdSdk_4_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/spritesheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/spritesheet.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scenes/area_2d.tscn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/garbage_spritesheet.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerArrows.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerArrows.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/bullet.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/bullet.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/JokeTypes.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/JokeTypes.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerStateMachine.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerStateMachine.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/bullet.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/bullet.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/main.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/main.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/JokeHopper.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/JokeHopper.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/garbage_spritesheet.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/garbage_spritesheet.gd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/player.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +38,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing main",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,7 +65,7 @@
       <updated>1706327615990</updated>
       <workItem from="1706327619927" duration="12000" />
       <workItem from="1706327672050" duration="64000" />
-      <workItem from="1706327794415" duration="3160000" />
+      <workItem from="1706327794415" duration="4455000" />
     </task>
     <servers />
   </component>
