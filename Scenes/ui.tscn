@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8pphq11vgv4e"]
+[gd_scene load_steps=7 format=3 uid="uid://b8pphq11vgv4e"]
 
 [ext_resource type="Texture2D" uid="uid://c0pf1fwwyjudn" path="res://Assets/red_border.png" id="1_ljl0r"]
 [ext_resource type="Texture2D" uid="uid://cu36ka43xer6k" path="res://Assets/blue_border.png" id="2_4alpg"]
+[ext_resource type="Texture2D" uid="uid://cubbdcv3occxs" path="res://Assets/green_border.png" id="3_v5i16"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bgq63"]
 font_size = 64
@@ -10,6 +11,10 @@ font_color = Color(1, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_ttiyk"]
 font_size = 64
 font_color = Color(0.2, 0.572549, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0bo0r"]
+font_size = 64
+font_color = Color(0.235294, 0.619608, 0.34902, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -34,6 +39,7 @@ size_flags_vertical = 0
 text = "P1"
 label_settings = SubResource("LabelSettings_bgq63")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Health" type="Label" parent="red box"]
 anchors_preset = 4
@@ -46,6 +52,7 @@ offset_bottom = -422.0
 grow_vertical = 2
 text = "Health"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="WeaknessLabel" type="Label" parent="red box"]
 offset_left = -50.0
@@ -54,6 +61,7 @@ offset_right = 50.0
 offset_bottom = -74.0
 text = "Weakness"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="queue label" type="Label" parent="red box"]
 offset_left = -50.0
@@ -62,6 +70,7 @@ offset_right = 50.0
 offset_bottom = 2.0
 text = "Queue"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="red box"]
 offset_left = -103.0
@@ -69,24 +78,28 @@ offset_top = -147.0
 offset_right = 103.0
 offset_bottom = -120.0
 value = 100.0
+metadata/_edit_use_anchors_ = true
 
 [node name="box1" type="ColorRect" parent="red box"]
 offset_left = -32.0
 offset_top = 170.0
 offset_right = 32.0
 offset_bottom = 234.0
+metadata/_edit_use_anchors_ = true
 
 [node name="box2" type="ColorRect" parent="red box"]
 offset_left = -32.0
 offset_top = 90.0
 offset_right = 32.0
 offset_bottom = 154.0
+metadata/_edit_use_anchors_ = true
 
 [node name="box3" type="ColorRect" parent="red box"]
 offset_left = -32.0
 offset_top = 10.0
 offset_right = 32.0
 offset_bottom = 74.0
+metadata/_edit_use_anchors_ = true
 
 [node name="next" type="Label" parent="red box"]
 offset_left = -96.0
@@ -94,18 +107,21 @@ offset_top = 194.0
 offset_right = -51.0
 offset_bottom = 217.0
 text = "NEXT:"
+metadata/_edit_use_anchors_ = true
 
 [node name="divider2" type="ColorRect" parent="red box"]
 offset_left = -67.0
 offset_top = -102.0
 offset_right = 67.0
 offset_bottom = -101.0
+metadata/_edit_use_anchors_ = true
 
 [node name="divider3" type="ColorRect" parent="red box"]
 offset_left = -67.0
 offset_top = -31.0
 offset_right = 67.0
 offset_bottom = -30.0
+metadata/_edit_use_anchors_ = true
 
 [node name="BlueBorder" type="Sprite2D" parent="."]
 position = Vector2(1792, 270)
@@ -192,4 +208,91 @@ offset_bottom = -182.0
 grow_horizontal = 2
 text = "P2"
 label_settings = SubResource("LabelSettings_ttiyk")
+horizontal_alignment = 1
+
+[node name="GreenBorder" type="Sprite2D" parent="."]
+position = Vector2(128, 810)
+texture = ExtResource("3_v5i16")
+
+[node name="Health2" type="Label" parent="GreenBorder"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -445.0
+offset_right = 50.0
+offset_bottom = -422.0
+grow_vertical = 2
+text = "Health"
+horizontal_alignment = 1
+
+[node name="WeaknessLabel2" type="Label" parent="GreenBorder"]
+offset_left = -50.0
+offset_top = -97.0
+offset_right = 50.0
+offset_bottom = -74.0
+text = "Weakness"
+horizontal_alignment = 1
+
+[node name="queue label2" type="Label" parent="GreenBorder"]
+offset_left = -50.0
+offset_top = -21.0
+offset_right = 50.0
+offset_bottom = 2.0
+text = "Queue"
+horizontal_alignment = 1
+
+[node name="ProgressBar2" type="ProgressBar" parent="GreenBorder"]
+offset_left = -103.0
+offset_top = -147.0
+offset_right = 103.0
+offset_bottom = -120.0
+
+[node name="box4" type="ColorRect" parent="GreenBorder"]
+offset_left = -32.0
+offset_top = 170.0
+offset_right = 32.0
+offset_bottom = 234.0
+
+[node name="box5" type="ColorRect" parent="GreenBorder"]
+offset_left = -32.0
+offset_top = 90.0
+offset_right = 32.0
+offset_bottom = 154.0
+
+[node name="box6" type="ColorRect" parent="GreenBorder"]
+offset_left = -32.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 74.0
+
+[node name="next2" type="Label" parent="GreenBorder"]
+offset_left = -96.0
+offset_top = 194.0
+offset_right = -51.0
+offset_bottom = 217.0
+text = "NEXT:"
+
+[node name="divider4" type="ColorRect" parent="GreenBorder"]
+offset_left = -67.0
+offset_top = -102.0
+offset_right = 67.0
+offset_bottom = -101.0
+
+[node name="divider5" type="ColorRect" parent="GreenBorder"]
+offset_left = -67.0
+offset_top = -31.0
+offset_right = 67.0
+offset_bottom = -30.0
+
+[node name="Label" type="Label" parent="GreenBorder"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -128.0
+offset_top = -270.0
+offset_right = -128.0
+offset_bottom = -182.0
+grow_horizontal = 2
+text = "P4"
+label_settings = SubResource("LabelSettings_0bo0r")
 horizontal_alignment = 1
