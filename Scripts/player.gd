@@ -18,9 +18,7 @@ var ghost = false
 @onready var animPlayer = $AnimationPlayer
 @onready var plBullet = preload("res://Scenes/bullet.tscn")
 var my_state_machine
-var psm = preload("res://Scripts/PlayerStateMachine.gd")
-var SenseOfHumor = psm.SenseOfHumor
-var my_sense_of_humor
+
 var JokeHopper = preload("res://Scripts/JokeHopper.gd").JokeHopper
 var my_joke_hopper
 
@@ -52,8 +50,7 @@ func _ready():
 		PlayerNumber = get_meta("PlayerNumber")
 		print(PlayerNumber)
 		
-	my_sense_of_humor = psm.get_sense_of_humor("Dark")
-	my_joke_hopper = JokeHopper.new(my_sense_of_humor.joke_distribution, 5)
+	my_joke_hopper = JokeHopper.new("Hands", 5)
 	queue_rects = my_joke_hopper.get_sprite_rects()
 	
 	frozen = true;
