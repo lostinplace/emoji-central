@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/PlayerDisplay.gd" id="1_2q6s5"]
 [ext_resource type="FontFile" uid="uid://c8axnpxc0nrk4" path="res://addons/gut/fonts/AnonymousPro-Bold.ttf" id="1_pyqx4"]
-[ext_resource type="Texture2D" uid="uid://bke6c57637hf1" path="res://Assets/spritesheet.png" id="3_143u3"]
+[ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="3_w0848"]
 
 [sub_resource type="Theme" id="Theme_h05o7"]
 
@@ -59,21 +59,24 @@ offset_bottom = 409.0
 
 [node name="q0" type="Sprite2D" parent="Panel"]
 position = Vector2(97.75, 358)
-scale = Vector2(0.69084, 0.629371)
-texture = ExtResource("3_143u3")
-region_enabled = true
+scale = Vector2(1.5, 1.365)
+texture = ExtResource("3_w0848")
+hframes = 9
+vframes = 8
 region_rect = Rect2(0, 0, 131, 143)
 
 [node name="q1" type="Sprite2D" parent="Panel"]
 position = Vector2(256, 357)
-scale = Vector2(0.69084, 0.629371)
-texture = ExtResource("3_143u3")
-region_enabled = true
+scale = Vector2(1.5, 1.365)
+texture = ExtResource("3_w0848")
+hframes = 9
+vframes = 8
 region_rect = Rect2(0, 0, 131, 143)
 
 [node name="q2" type="Sprite2D" parent="Panel"]
 position = Vector2(409, 360)
-scale = Vector2(0.69084, 0.629371)
-texture = ExtResource("3_143u3")
-region_enabled = true
+scale = Vector2(1.5, 1.365)
+texture = ExtResource("3_w0848")
+hframes = 9
+vframes = 8
 region_rect = Rect2(0, 0, 131, 143)
