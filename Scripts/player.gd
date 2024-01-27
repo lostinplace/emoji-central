@@ -40,6 +40,7 @@ func _input(event):
 		var next_joke = my_joke_hopper.dequeue_joke()
 		
 		var bullet = plBullet.instantiate()
+		bullet.bulletOwner = self
 		bullet.set_joketype(next_joke)
 		bullet.global_position = global_position
 		get_tree().current_scene.add_child(bullet)
@@ -58,3 +59,11 @@ func _physics_process(delta):
 	
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("BulletGroup") :
+		if body.bulletOwner != self:
+			damage(10);
+			body.queue_free();
+	 # Replace with function body.
