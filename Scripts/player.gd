@@ -104,7 +104,8 @@ func _physics_process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("BulletGroup") :
+	if body.is_in_group("BulletsGroup") :
+		print(body)
 		if body.bulletOwner != self:
 			damage(10);
 			body.queue_free();
