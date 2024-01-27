@@ -1,18 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://sj575hj0a0eh"]
+[gd_scene load_steps=7 format=3 uid="uid://sj575hj0a0eh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wef07"]
-[ext_resource type="Texture2D" uid="uid://bqigh5uginenv" path="res://Assets/players/Yellow.png" id="2_y0xq8"]
+[ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_c47p8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57o5j"]
 size = Vector2(60, 60)
+
+[sub_resource type="Animation" id="Animation_encp2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a7qa8"]
+resource_name = "damage_flash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(10, 10, 10, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r4vb7"]
+_data = {
+"RESET": SubResource("Animation_encp2"),
+"damage_flash": SubResource("Animation_a7qa8")
+}
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_wef07")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_y0xq8")
+texture = ExtResource("2_c47p8")
 hframes = 8
+vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_57o5j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r4vb7")
+}
