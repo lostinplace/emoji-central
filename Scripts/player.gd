@@ -55,6 +55,11 @@ func _ready():
 	my_sense_of_humor = psm.get_sense_of_humor("Dark")
 	my_joke_hopper = JokeHopper.new(my_sense_of_humor.joke_distribution, 5)
 	queue_rects = my_joke_hopper.get_sprite_rects()
+	
+	frozen = true;
+	
+	await get_tree().create_timer(3).timeout
+	frozen = false
 
 
 func damage(dmg):
@@ -89,22 +94,24 @@ func _process(delta):
 	arrow.rotation = lastLooked.angle() - deg_to_rad(90)
 
 func _physics_process(delta):
-	#movement
-	var direction = Vector2.ZERO
-	velocity= Vector2.ZERO;
-	if keyboard == true:
-		direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
-	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
-		direction.x -= 1
-	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):
-		direction.x += 1
-	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_UP):
-		direction.y -= 1
-	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
-		direction.y += 1
-	if direction:
-		velocity = direction.normalized() * SPEED
-		lastLooked = direction
+	
+	if !frozen:
+		#movement
+		var direction = Vector2.ZERO
+		velocity= Vector2.ZERO;
+		if keyboard == true:
+			direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
+			direction.x -= 1
+		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):
+			direction.x += 1
+		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_UP):
+			direction.y -= 1
+		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
+			direction.y += 1
+		if direction:
+			velocity = direction.normalized() * SPEED
+			lastLooked = direction
 
 	
 

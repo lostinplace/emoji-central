@@ -3,10 +3,17 @@ extends Node
 
 var Player1_Sprites: Array[Sprite2D]
 
+@onready var countdownText = $Countdown;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	countdownText.text=("3")
+	await get_tree().create_timer(1).timeout
+	countdownText.text=("2")
+	await get_tree().create_timer(1).timeout
+	countdownText.text=("1")
+	await get_tree().create_timer(1).timeout
+	countdownText.visible = false;
 	
 #func update_queue_sprites(player: int, rects: Array[Rect2]):
 	#for i in rects.size():
