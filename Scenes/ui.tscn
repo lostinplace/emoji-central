@@ -374,7 +374,7 @@ texture = ExtResource("2_136mq")
 hframes = 8
 vframes = 4
 
-[node name="P1Panel" parent="." instance=ExtResource("6_uxkvl")]
+[node name="P0Panel" parent="." instance=ExtResource("6_uxkvl")]
 offset_left = 17.0
 offset_top = 11.0
 offset_right = 17.0

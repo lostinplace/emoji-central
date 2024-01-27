@@ -1,10 +1,26 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7pde8t1vgday"]
 
-[ext_resource type="Script" path="res://Scripts/stock_handler.gd" id="1_u2v1i"]
 [ext_resource type="PackedScene" uid="uid://dwotayg5o1mws" path="res://Scenes/PlayerUIDisplay.tscn" id="2_hw1ds"]
 
+[sub_resource type="GDScript" id="GDScript_qoep2"]
+script/source = "extends Node
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if Input.is_action_just_pressed(\"AddToStock\"):
+		addAnItem()
+	pass
+	
+
+"
+
 [node name="Stock_base" type="Node2D"]
-script = ExtResource("1_u2v1i")
+script = SubResource("GDScript_qoep2")
 
 [node name="stockitem" parent="." instance=ExtResource("2_hw1ds")]
 offset_left = 628.0
