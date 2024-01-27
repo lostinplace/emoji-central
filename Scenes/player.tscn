@@ -1,9 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://sj575hj0a0eh"]
-[gd_scene load_steps=8 format=3 uid="uid://sj575hj0a0eh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wef07"]
 [ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_c47p8"]
-[ext_resource type="Texture2D" uid="uid://b2cumkswt2g53" path="res://Assets/PlayerArrows.png" id="3_x4shv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57o5j"]
 size = Vector2(60, 60)
@@ -59,9 +57,3 @@ shape = SubResource("RectangleShape2D_57o5j")
 libraries = {
 "": SubResource("AnimationLibrary_r4vb7")
 }
-
-[node name="arrow" type="Sprite2D" parent="."]
-rotation = 1.5708
-texture = ExtResource("3_x4shv")
-offset = Vector2(-2, 40)
-vframes = 4
