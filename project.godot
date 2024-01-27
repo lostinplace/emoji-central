@@ -94,3 +94,7 @@ AddToStock={
 2d_physics/layer_2="bullets"
 2d_physics/layer_3="wall"
 2d_physics/layer_4="powerup"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

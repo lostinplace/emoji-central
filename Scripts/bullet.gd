@@ -19,6 +19,7 @@ func _physics_process(delta):
 	global_position += velocity * speed
 	var collisionInfo = move_and_collide(velocity*delta)
 	if collisionInfo:
+		print("bounce")
 		velocity = velocity.bounce(collisionInfo.get_normal())
 
 var jt = preload("res://Scripts/JokeTypes.gd")
