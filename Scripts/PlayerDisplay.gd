@@ -14,8 +14,9 @@ func _process(delta):
 func update_queue_sprites(rects :Array[Rect2]):
 	for i in rects.size():
 		var name = "Panel/q{i}".format({"i":i})
-		var node = get_node(name)
-		if node == null:
-			continue
-		node.region_rect=rects[i]
+		if is_instance_valid(get_node(name)):
+			var node = get_node(name)
+			if node == null:
+				continue
+			node.region_rect=rects[i]
 		
