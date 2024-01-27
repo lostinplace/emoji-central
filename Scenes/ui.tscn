@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8pphq11vgv4e"]
+[gd_scene load_steps=10 format=3 uid="uid://b8pphq11vgv4e"]
 
 [ext_resource type="Texture2D" uid="uid://c0pf1fwwyjudn" path="res://Assets/red_border.png" id="1_ljl0r"]
 [ext_resource type="Texture2D" uid="uid://cu36ka43xer6k" path="res://Assets/blue_border.png" id="2_4alpg"]
+[ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="2_136mq"]
 [ext_resource type="Texture2D" uid="uid://cubbdcv3occxs" path="res://Assets/green_border.png" id="3_v5i16"]
 [ext_resource type="Texture2D" uid="uid://7fsn7y02mvp4" path="res://Assets/yellow_border.png" id="4_nrb2t"]
 
@@ -85,26 +86,47 @@ offset_bottom = -120.0
 value = 100.0
 metadata/_edit_use_anchors_ = true
 
-[node name="box1" type="ColorRect" parent="red box"]
+[node name="p1_1stBox" type="ColorRect" parent="red box"]
 offset_left = -32.0
 offset_top = 170.0
 offset_right = 32.0
 offset_bottom = 234.0
 metadata/_edit_use_anchors_ = true
 
-[node name="box2" type="ColorRect" parent="red box"]
+[node name="p1_1stQueue" type="Sprite2D" parent="red box/p1_1stBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
+
+[node name="p1_2ndBox" type="ColorRect" parent="red box"]
 offset_left = -32.0
 offset_top = 90.0
 offset_right = 32.0
 offset_bottom = 154.0
 metadata/_edit_use_anchors_ = true
 
-[node name="box3" type="ColorRect" parent="red box"]
+[node name="p1_2ndQueue" type="Sprite2D" parent="red box/p1_2ndBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
+
+[node name="p1_3rdBox" type="ColorRect" parent="red box"]
 offset_left = -32.0
 offset_top = 10.0
 offset_right = 32.0
 offset_bottom = 74.0
 metadata/_edit_use_anchors_ = true
+
+[node name="p1_3rdQueue" type="Sprite2D" parent="red box/p1_3rdBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
 
 [node name="next" type="Label" parent="red box"]
 offset_left = -96.0
@@ -166,23 +188,44 @@ offset_top = -147.0
 offset_right = 103.0
 offset_bottom = -120.0
 
-[node name="box1" type="ColorRect" parent="BlueBorder"]
+[node name="p2_1stBox" type="ColorRect" parent="BlueBorder"]
 offset_left = -32.0
 offset_top = 170.0
 offset_right = 32.0
 offset_bottom = 234.0
 
-[node name="box2" type="ColorRect" parent="BlueBorder"]
+[node name="p2_1stQueue" type="Sprite2D" parent="BlueBorder/p2_1stBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
+
+[node name="p2_2ndBox" type="ColorRect" parent="BlueBorder"]
 offset_left = -32.0
 offset_top = 90.0
 offset_right = 32.0
 offset_bottom = 154.0
 
-[node name="box3" type="ColorRect" parent="BlueBorder"]
+[node name="p2_2ndQueue" type="Sprite2D" parent="BlueBorder/p2_2ndBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
+
+[node name="p2_3rdBox" type="ColorRect" parent="BlueBorder"]
 offset_left = -32.0
 offset_top = 10.0
 offset_right = 32.0
 offset_bottom = 74.0
+
+[node name="p2_3rdQueue" type="Sprite2D" parent="BlueBorder/p2_3rdBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
 
 [node name="next" type="Label" parent="BlueBorder"]
 offset_left = -96.0
@@ -257,27 +300,6 @@ offset_right = 103.0
 offset_bottom = -120.0
 metadata/_edit_use_anchors_ = true
 
-[node name="box4" type="ColorRect" parent="GreenBorder"]
-offset_left = -32.0
-offset_top = 170.0
-offset_right = 32.0
-offset_bottom = 234.0
-metadata/_edit_use_anchors_ = true
-
-[node name="box5" type="ColorRect" parent="GreenBorder"]
-offset_left = -32.0
-offset_top = 90.0
-offset_right = 32.0
-offset_bottom = 154.0
-metadata/_edit_use_anchors_ = true
-
-[node name="box6" type="ColorRect" parent="GreenBorder"]
-offset_left = -32.0
-offset_top = 10.0
-offset_right = 32.0
-offset_bottom = 74.0
-metadata/_edit_use_anchors_ = true
-
 [node name="next2" type="Label" parent="GreenBorder"]
 offset_left = -96.0
 offset_top = 194.0
@@ -312,6 +334,45 @@ text = "P4"
 label_settings = SubResource("LabelSettings_0bo0r")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="p4_1stBox" type="ColorRect" parent="GreenBorder"]
+offset_left = -32.0
+offset_top = 170.0
+offset_right = 32.0
+offset_bottom = 234.0
+
+[node name="p4_1stQueue" type="Sprite2D" parent="GreenBorder/p4_1stBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
+
+[node name="p4_2ndBox" type="ColorRect" parent="GreenBorder"]
+offset_left = -32.0
+offset_top = 90.0
+offset_right = 32.0
+offset_bottom = 154.0
+
+[node name="p4_2ndQueue" type="Sprite2D" parent="GreenBorder/p4_2ndBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
+
+[node name="p4_3rdBox" type="ColorRect" parent="GreenBorder"]
+offset_left = -32.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 74.0
+
+[node name="p4_3rdQueue" type="Sprite2D" parent="GreenBorder/p4_3rdBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
 
 [node name="GreenBorder2" type="Sprite2D" parent="."]
 position = Vector2(128, 810)
@@ -355,27 +416,6 @@ offset_right = 103.0
 offset_bottom = -120.0
 metadata/_edit_use_anchors_ = true
 
-[node name="box4" type="ColorRect" parent="GreenBorder2"]
-offset_left = -32.0
-offset_top = 170.0
-offset_right = 32.0
-offset_bottom = 234.0
-metadata/_edit_use_anchors_ = true
-
-[node name="box5" type="ColorRect" parent="GreenBorder2"]
-offset_left = -32.0
-offset_top = 90.0
-offset_right = 32.0
-offset_bottom = 154.0
-metadata/_edit_use_anchors_ = true
-
-[node name="box6" type="ColorRect" parent="GreenBorder2"]
-offset_left = -32.0
-offset_top = 10.0
-offset_right = 32.0
-offset_bottom = 74.0
-metadata/_edit_use_anchors_ = true
-
 [node name="next2" type="Label" parent="GreenBorder2"]
 offset_left = -96.0
 offset_top = 194.0
@@ -409,3 +449,42 @@ grow_horizontal = 2
 text = "P3"
 label_settings = SubResource("LabelSettings_i14sj")
 horizontal_alignment = 1
+
+[node name="p3_1stBox" type="ColorRect" parent="GreenBorder2"]
+offset_left = -32.0
+offset_top = 170.0
+offset_right = 32.0
+offset_bottom = 234.0
+
+[node name="p3_1stQueue" type="Sprite2D" parent="GreenBorder2/p3_1stBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
+
+[node name="p3_2ndBox" type="ColorRect" parent="GreenBorder2"]
+offset_left = -32.0
+offset_top = 90.0
+offset_right = 32.0
+offset_bottom = 154.0
+
+[node name="p3_2ndQueue" type="Sprite2D" parent="GreenBorder2/p3_2ndBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
+
+[node name="p3_3rdBox" type="ColorRect" parent="GreenBorder2"]
+offset_left = -32.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 74.0
+
+[node name="p3_3rdQueue" type="Sprite2D" parent="GreenBorder2/p3_3rdBox"]
+position = Vector2(32, 32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_136mq")
+hframes = 8
+vframes = 4
