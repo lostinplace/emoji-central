@@ -37,7 +37,7 @@ func _ready():
 		controllerID = singleton.player4
 	if controllerID == 4:
 		keyboard = true
-	sprite.frame = playerNum * 8
+	sprite.frame = playerNum * 9
 	arrow.frame = playerNum
 	if has_meta("author"):
 		PlayerNumber = get_meta("PlayerNumber")
@@ -60,9 +60,9 @@ func update_player_queue_control(rects: Array):
 
 func damage(dmg):
 	life -= dmg
-	sprite.frame = (80 - life)/10 + (8 * playerNum)
+	sprite.frame = (80 - life)/10 + (9 * playerNum)
 	if life < 1:
-		sprite.frame = 7 + (8 * playerNum)
+		sprite.frame = 7 + (9 * playerNum)
 		return
 	animPlayer.stop()
 	animPlayer.play("damage_flash")
