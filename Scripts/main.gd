@@ -28,7 +28,7 @@ func _process(delta):
 	
 	
 func _on_timer_timeout():
-	cloudTimer.wait_time = randf_range(5,15)
+	cloudTimer.wait_time = randf_range(15,25)
 	var cloud = plCloud.instantiate()
 	add_child(cloud)
 	cloud.global_position = Vector2 (0, randi_range(0,650))
