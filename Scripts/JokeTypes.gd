@@ -1,0 +1,9 @@
+enum JokeTypes {
+	DAD_JOKE,
+	KNOCK_KNOCK,
+	DARK_HUMOR,
+	LIGHT_HUMOR,
+	FART_JOKE,
+	CAT_JOKE,
+	DOG_JOKE
+}
