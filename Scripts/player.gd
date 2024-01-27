@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
+@onready var singleton = get_node("/root/Singleton")
+@export var SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+@onready var arrow = $Sprite2D2
 
+var keyboard = false
+var controllerID = 0
 var playerNum = 0
-var lastLooked: Vector2
+var lastLooked = Vector2(1, 0)
 var life = 70
 @onready var sprite = $Sprite2D
 @onready var animPlayer = $AnimationPlayer
@@ -17,12 +20,25 @@ var my_sense_of_humor
 var JokeHopper = preload("res://Scripts/JokeHopper.gd").JokeHopper
 var my_joke_hopper
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var PlayerNumber
 
 
 func _ready():
+	if playerNum == 0:
+		controllerID = singleton.player1
+	elif playerNum == 1:
+		controllerID = singleton.player2
+	elif playerNum == 2:
+		controllerID = singleton.player3
+	elif playerNum == 3:
+		controllerID = singleton.player4
+	if controllerID == 4:
+		keyboard = true
+	sprite.frame = playerNum * 9
+	arrow.frame = playerNum
 	if has_meta("author"):
 		PlayerNumber = get_meta("PlayerNumber")
 		print(PlayerNumber)
@@ -44,15 +60,16 @@ func update_player_queue_control(rects: Array):
 
 func damage(dmg):
 	life -= dmg
-	sprite.frame = int(80 - life/10)
+	sprite.frame = (80 - life)/10 + (9 * playerNum)
 	if life < 1:
+		sprite.frame = 7 + (9 * playerNum)
 		return
 	animPlayer.stop()
 	animPlayer.play("damage_flash")
 
 
 func _input(event):
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("shoot") and keyboard == true or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A):
 		var next_joke = my_joke_hopper.dequeue_joke()
 		var bullet = plBullet.instantiate()
 		bullet.bulletOwner = self
@@ -66,15 +83,28 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		damage(10)
 
+func _process(delta):
+	arrow.rotation = lastLooked.angle() - deg_to_rad(90)
 
 func _physics_process(delta):
 	#movement
-	var direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+	var direction = Vector2.ZERO
+	velocity= Vector2.ZERO;
+	if keyboard == true:
+		direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
+		direction.x -= 1
+	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):
+		direction.x += 1
+	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_UP):
+		direction.y -= 1
+	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
+		direction.y += 1
 	if direction:
-		velocity = direction * SPEED
-		lastLooked = velocity
-	else:
-		velocity= Vector2.ZERO;
+		velocity = direction.normalized() * SPEED
+		lastLooked = direction
+
+	
 
 	move_and_slide()
 
