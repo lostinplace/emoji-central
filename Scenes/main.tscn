@@ -21,13 +21,11 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="Background3" type="Sprite2D" parent="."]
-z_index = -10
 position = Vector2(967, 556)
 scale = Vector2(1.12344, 1.05664)
 texture = ExtResource("2_kkbhg")
 
 [node name="Sun" type="Sprite2D" parent="."]
-z_index = -10
 position = Vector2(400, 147)
 scale = Vector2(0.738095, 0.738095)
 texture = ExtResource("3_23d2x")
