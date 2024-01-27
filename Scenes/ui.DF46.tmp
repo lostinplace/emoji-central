@@ -3,16 +3,14 @@
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_7nm6v"]
 [ext_resource type="PackedScene" uid="uid://dwotayg5o1mws" path="res://Scenes/PlayerUIDisplay.tscn" id="6_uxkvl"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_07fhx"]
+[sub_resource type="LabelSettings" id="LabelSettings_5calf"]
 font_size = 128
 
 [node name="UI" type="Control"]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_7nm6v")
 
 [node name="P0Panel" parent="." instance=ExtResource("6_uxkvl")]
@@ -48,18 +46,14 @@ scale = Vector2(0.418797, 0.41629)
 metadata/PlayerName = "P3"
 
 [node name="Countdown" type="Label" parent="."]
-layout_mode = 0
-offset_left = 920.0
-offset_top = 464.0
-offset_right = 993.0
-offset_bottom = 639.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "3"
-label_settings = SubResource("LabelSettings_07fhx")
-
-[node name="ColorRect" type="ColorRect" parent="Countdown"]
-layout_mode = 0
-offset_left = -688.0
-offset_top = -456.0
-offset_right = 773.0
-offset_bottom = 616.0
-color = Color(0.2, 0.2, 0.2, 0.321569)
+label_settings = SubResource("LabelSettings_5calf")
+horizontal_alignment = 1
+vertical_alignment = 1

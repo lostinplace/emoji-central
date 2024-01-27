@@ -7,11 +7,13 @@ const JUMP_VELOCITY = -400.0
 @onready var fireDelayTimer = $fireDelay
 @export var firingDelay: float
 
+var main
 var keyboard = false
 var controllerID = 0
 var playerNum = 0
 var lastLooked = Vector2(1, 0)
 var life = 70
+var ghost = false
 @onready var sprite = $Sprite2D
 @onready var animPlayer = $AnimationPlayer
 @onready var plBullet = preload("res://Scenes/bullet.tscn")
@@ -28,6 +30,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var PlayerNumber
 var queue_rects: Array[Rect2]
 
+var frozen = false
+
 func _ready():
 	
 	PlayerNumber = get_meta("PlayerNumber")
@@ -42,7 +46,7 @@ func _ready():
 		controllerID = singleton.player4
 	if controllerID == 4:
 		keyboard = true
-	sprite.frame = playerNum * 9
+	sprite.frame = 6 + (playerNum * 9)
 	arrow.frame = playerNum
 	if has_meta("author"):
 		PlayerNumber = get_meta("PlayerNumber")
@@ -51,29 +55,39 @@ func _ready():
 	my_sense_of_humor = psm.get_sense_of_humor("Dark")
 	my_joke_hopper = JokeHopper.new(my_sense_of_humor.joke_distribution, 5)
 	queue_rects = my_joke_hopper.get_sprite_rects()
+	
+	frozen = true;
+	
+	await get_tree().create_timer(3).timeout
+	frozen = false
 
 
 func damage(dmg):
 	life -= dmg
-	sprite.frame = (80 - life)/10 + (9 * playerNum)
+	sprite.frame = life/10 + (9 * playerNum)
 	if life < 1:
-		sprite.frame = 7 + (9 * playerNum)
+		if ghost == false:
+			main.player_dies(playerNum)
+		ghost = true
+		sprite.frame = 8 + (9 * playerNum)
 		return
 	animPlayer.stop()
 	animPlayer.play("damage_flash")
 
 
 func _input(event):
-	if event.is_action_pressed("shoot") and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped():
-		var next_joke = my_joke_hopper.dequeue_joke()
-		var bullet = plBullet.instantiate()
-		fireDelayTimer.start(firingDelay)
-		bullet.bulletOwner = self
-		bullet.set_joketype(next_joke)
-		queue_rects = my_joke_hopper.get_sprite_rects()
-		bullet.global_position = global_position
-		get_tree().current_scene.add_child(bullet)
-		bullet.velocity = lastLooked
+	if !frozen:
+		if event.is_action_pressed("shoot") and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped():
+			var next_joke = my_joke_hopper.dequeue_joke()
+			var bullet = plBullet.instantiate()
+			fireDelayTimer.start(firingDelay)
+			bullet.set_joketype(next_joke)
+			queue_rects = my_joke_hopper.get_sprite_rects()
+			var bullet_position = global_position + lastLooked * 40
+			bullet.global_position = bullet_position
+			
+			get_tree().current_scene.add_child(bullet)
+			bullet.velocity = lastLooked
 	if event.is_action_pressed("ui_cancel"):
 		damage(10)
 
@@ -81,24 +95,24 @@ func _process(delta):
 	arrow.rotation = lastLooked.angle() - deg_to_rad(90)
 
 func _physics_process(delta):
-	#movement
-	var direction = Vector2.ZERO
-	velocity= Vector2.ZERO;
-	if keyboard == true:
-		direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
-	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
-		direction.x -= 1
-	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):
-		direction.x += 1
-	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_UP):
-		direction.y -= 1
-	if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
-		direction.y += 1
-	if direction:
-		velocity = direction.normalized() * SPEED
-		lastLooked = direction
-
 	
+	if !frozen:
+		#movement
+		var direction = Vector2.ZERO
+		velocity= Vector2.ZERO;
+		if keyboard == true:
+			direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
+			direction.x -= 1
+		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):
+			direction.x += 1
+		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_UP):
+			direction.y -= 1
+		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
+			direction.y += 1
+		if direction:
+			velocity = direction.normalized() * SPEED
+			lastLooked = direction
 
 	move_and_slide()
 
@@ -106,7 +120,7 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("BulletsGroup") :
 		print(body)
-		if body.bulletOwner != self:
-			damage(10);
-			body.queue_free();
+		
+		damage(10);
+		body.queue_free();
 	 # Replace with function body.

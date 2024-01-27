@@ -1,11 +1,7 @@
-extends Node2D
+extends Control
 
-var player1
-var player2
-var player3
-var player4
-var playerCount = 0
-var winner = 0
+@onready var plLobby = preload("res://Scenes/menus/lobby.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,3 +10,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_lobby_pressed():
+	get_tree().change_scene_to_packed(plLobby)
+
+
+func _on_quit_pressed():
+	get_tree().quit()

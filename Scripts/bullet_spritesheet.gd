@@ -4,7 +4,16 @@ const sprite_height = 64;
 const sprite_width = 64;
 const sprite_size = Vector2(sprite_width, sprite_height)
 
-var spritesheet = preload("res://Assets/spritesheet.png")
+var categories = [
+	"Hands",
+	"Baked Goods",
+	"Sports",
+	"Plants",
+	"Traffic",
+	"Water",
+	"Music",
+	"Animals"
+]
 
 static func get_sprite_rect(joketype: int):
 	

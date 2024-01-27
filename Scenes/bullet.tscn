@@ -1,22 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmmi5oa7mixlj"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_v5e6l"]
-[ext_resource type="Texture2D" uid="uid://bke6c57637hf1" path="res://Assets/spritesheet.png" id="2_rvxdd"]
+[ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="2_h0eu6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2qlgt"]
 
 [node name="Bullet" type="RigidBody2D" groups=["BulletsGroup"]]
-collision_layer = 7
-collision_mask = 7
+collision_mask = 4
 gravity_scale = 0.0
 script = ExtResource("1_v5e6l")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_rvxdd")
-region_enabled = true
-region_rect = Rect2(0, 0, 131, 143)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.6, 1.6)
 shape = SubResource("CircleShape2D_2qlgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_h0eu6")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
