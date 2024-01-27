@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wef07"]
 [ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_c47p8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57o5j"]
-size = Vector2(60, 60)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hafrt"]
+radius = 28.0
 
 [sub_resource type="Animation" id="Animation_encp2"]
 length = 0.001
@@ -51,7 +51,7 @@ hframes = 8
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_57o5j")
+shape = SubResource("CircleShape2D_hafrt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
