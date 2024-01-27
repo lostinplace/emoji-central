@@ -81,10 +81,11 @@ func _input(event):
 			var next_joke = my_joke_hopper.dequeue_joke()
 			var bullet = plBullet.instantiate()
 			fireDelayTimer.start(firingDelay)
-			bullet.bulletOwner = self
 			bullet.set_joketype(next_joke)
 			queue_rects = my_joke_hopper.get_sprite_rects()
-			bullet.global_position = global_position
+			var bullet_position = global_position + lastLooked * 40
+			bullet.global_position = bullet_position
+			
 			get_tree().current_scene.add_child(bullet)
 			bullet.velocity = lastLooked
 	if event.is_action_pressed("ui_cancel"):
@@ -113,15 +114,13 @@ func _physics_process(delta):
 			velocity = direction.normalized() * SPEED
 			lastLooked = direction
 
-	
-
 	move_and_slide()
 
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("BulletsGroup") :
 		print(body)
-		if body.bulletOwner != self:
-			damage(10);
-			body.queue_free();
+		
+		damage(10);
+		body.queue_free();
 	 # Replace with function body.
