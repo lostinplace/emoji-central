@@ -1,8 +1,8 @@
 extends Control
 
 @onready var singleton = get_node("/root/Singleton")
-@onready var mainmenu = preload("res://Scenes/menus/mainmenu.tscn")
-@onready var main = preload("res://Scenes/main.tscn")
+@onready var mainmenu = load("res://Scenes/menus/mainmenu.tscn")
+@onready var main = load("res://Scenes/main.tscn")
 
 func _ready():
 	$Label.text = str("P", singleton.winner, " WINS!!")
