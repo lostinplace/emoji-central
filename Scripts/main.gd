@@ -19,6 +19,10 @@ func _ready():
 		player.global_position = Vector2(randi_range(500, 1000), randi_range(100,700))
 		add_child(player)
 		players.append(player)
+		var jh = player.JokeHopper
+		
+		var player_category = player.my_joke_hopper.my_category
+		$UI.set_player_vulnerability(i, player_category.category)
 		
 
 func player_dies(player):
@@ -27,11 +31,13 @@ func player_dies(player):
 		singleton.winner = playersAlive.front()
 		get_tree().change_scene_to_packed(winScreen)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	for i in players.size():
 		var this_player = players[i]
 		var player_rects = this_player.queue_rects
 		$UI.update_queue_sprites(i, player_rects)
+		
 	
 	
 func _on_timer_timeout():

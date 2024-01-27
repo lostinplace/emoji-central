@@ -79,3 +79,17 @@ scale = Vector2(1.5, 1.365)
 texture = ExtResource("3_w0848")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Border4" type="ColorRect" parent="Panel"]
+offset_left = 86.0
+offset_top = 688.0
+offset_right = 396.0
+offset_bottom = 1004.0
+color = Color(1, 0, 0, 1)
+
+[node name="vulnerable" type="Sprite2D" parent="Panel"]
+position = Vector2(246, 852.188)
+scale = Vector2(3.78125, 3.71286)
+texture = ExtResource("3_w0848")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)

@@ -22,6 +22,11 @@ static func get_random_category() -> Dictionary:
 	var result = categories[keys[randi() % keys.size()]]
 	return result
 	
+static func get_category_rect(category_name: String) -> Rect2:
+	var category = categories[category_name]
+	var offset_y = category["y-offset"] * sprite_height
+	var result = Rect2(Vector2(0, offset_y), sprite_size)
+	return result
 
 static func get_rect_for_joke(joke_number:int, category_name: String) -> Rect2:
 	var category = categories[category_name]
