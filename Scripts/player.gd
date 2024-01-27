@@ -7,11 +7,13 @@ const JUMP_VELOCITY = -400.0
 @onready var fireDelayTimer = $fireDelay
 @export var firingDelay: float
 
+var main
 var keyboard = false
 var controllerID = 0
 var playerNum = 0
 var lastLooked = Vector2(1, 0)
 var life = 70
+var ghost = false
 @onready var sprite = $Sprite2D
 @onready var animPlayer = $AnimationPlayer
 @onready var plBullet = preload("res://Scenes/bullet.tscn")
@@ -55,16 +57,19 @@ func _ready():
 
 func damage(dmg):
 	life -= dmg
-	sprite.frame = (80 - life)/10 + (9 * playerNum)
+	sprite.frame = (70 - life)/10 + (9 * playerNum)
 	if life < 1:
-		sprite.frame = 7 + (9 * playerNum)
+		if ghost == false:
+			main.player_dies(playerNum)
+		ghost = true
+		sprite.frame = 8 + (9 * playerNum)
 		return
 	animPlayer.stop()
 	animPlayer.play("damage_flash")
 
 
 func _input(event):
-	if event.is_action_pressed("shoot") and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped():
+	if event.is_action_pressed("shoot") and keyboard == true and fireDelayTimer.is_stopped() and ghost != true or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped() and ghost != true:
 		var next_joke = my_joke_hopper.dequeue_joke()
 		var bullet = plBullet.instantiate()
 		fireDelayTimer.start(firingDelay)
