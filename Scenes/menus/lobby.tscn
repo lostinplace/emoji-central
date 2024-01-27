@@ -56,66 +56,6 @@ hframes = 3
 vframes = 4
 frame = 9
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 302.0
-offset_top = 327.0
-offset_right = 612.0
-offset_bottom = 643.0
-
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 648.0
-offset_top = 331.0
-offset_right = 958.0
-offset_bottom = 647.0
-
-[node name="Panel3" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 1026.0
-offset_top = 323.0
-offset_right = 1336.0
-offset_bottom = 639.0
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 368.0
-offset_top = 602.0
-offset_right = 545.0
-offset_bottom = 675.0
-text = "PRESS E OR (A) TO JOIN"
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 713.0
-offset_top = 604.0
-offset_right = 890.0
-offset_bottom = 677.0
-text = "PRESS E OR (A) TO JOIN"
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1100.0
-offset_top = 607.0
-offset_right = 1277.0
-offset_bottom = 680.0
-text = "PRESS E OR (A) TO JOIN"
-
-[node name="Panel4" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 1388.0
-offset_top = 326.0
-offset_right = 1698.0
-offset_bottom = 642.0
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1462.0
-offset_top = 610.0
-offset_right = 1639.0
-offset_bottom = 683.0
-text = "PRESS E OR (A) TO JOIN"
-
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 682.0
