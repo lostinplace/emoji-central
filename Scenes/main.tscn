@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dba4sc5670y6r" path="res://Assets/background.png" id="1_nqx3h"]
 [ext_resource type="PackedScene" uid="uid://sj575hj0a0eh" path="res://Scenes/player.tscn" id="2_8f3pn"]
 [ext_resource type="PackedScene" uid="uid://cvd3b2ciglhf2" path="res://Scenes/environment/wall_tiles.tscn" id="3_kaaxp"]
-[ext_resource type="PackedScene" uid="uid://b8pphq11vgv4e" path="res://Scenes/ui.tscn" id="4_owryk"]
+[ext_resource type="PackedScene" path="res://Scenes/ui.tscn" id="4_owryk"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,6 +22,6 @@ position = Vector2(960, 540)
 scale = Vector2(2, 2)
 
 [node name="wallTiles" parent="." instance=ExtResource("3_kaaxp")]
-layer_0/tile_data = PackedInt32Array(458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 65538, 1, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 393218, 1, 0, 65548, 1, 0, 131084, 1, 0, 196620, 1, 0, 262156, 1, 0, 327692, 1, 0, 393228, 1, 0)
+texture_filter = 1
 
 [node name="Control" parent="." instance=ExtResource("4_owryk")]
