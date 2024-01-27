@@ -44,6 +44,7 @@ offset_left = 13.0
 offset_top = 278.0
 offset_right = 169.0
 offset_bottom = 452.0
+color = Color(1, 1, 0.0862745, 1)
 
 [node name="Border2" type="ColorRect" parent="Panel"]
 layout_mode = 0
