@@ -46,7 +46,7 @@ func _ready():
 		controllerID = singleton.player4
 	if controllerID == 4:
 		keyboard = true
-	sprite.frame = playerNum * 9
+	sprite.frame = 6 + (playerNum * 9)
 	arrow.frame = playerNum
 	if has_meta("author"):
 		PlayerNumber = get_meta("PlayerNumber")
@@ -59,7 +59,7 @@ func _ready():
 
 func damage(dmg):
 	life -= dmg
-	sprite.frame = (70 - life)/10 + (9 * playerNum)
+	sprite.frame = life/10 + (9 * playerNum)
 	if life < 1:
 		if ghost == false:
 			main.player_dies(playerNum)
