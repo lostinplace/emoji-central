@@ -7,16 +7,10 @@ enum PlayerStates {
 	LAUGHING_TO_DEATH
 }
 
-
-
-
-
 var current_state = PlayerStates.FINE
-
 
 func _ready():
 	set_process(true)
-
 
 func _process(delta):
 	match current_state:
@@ -52,15 +46,38 @@ class SenseOfHumor:
 	var name: String
 	var description: String
 	var joke_distribution: Dictionary
-	var icon_path: String
 
-	func _init(_name: String, _description: String, _joke_distribution: Dictionary, _icon_path: String):
+	func _init(_name: String, _description: String, _joke_distribution: Dictionary):
 		name = _name
 		description = _description
 		joke_distribution = _joke_distribution
-		icon_path = _icon_path
 
 
-
-
-
+static func get_sense_of_humor(name: String):
+	var jt = preload("res://Scripts/JokeTypes.gd")
+	var JokeTypes = jt.JokeTypes
+	
+	var dark_sense_of_humor = SenseOfHumor.new(
+			"Dark", 
+			"You laugh at the misfortune of others.", 
+				{
+					JokeTypes.DARK_HUMOR: 1, 
+					JokeTypes.LIGHT_HUMOR: 1, 
+				}
+		)
+	
+	var pet_humor = SenseOfHumor.new(
+		"Pets",
+		"You laugh at the misfortune of others.",
+			{
+				JokeTypes.CAT_JOKE: 5,
+				JokeTypes.DOG_JOKE: 5,
+				JokeTypes.DAD_JOKE: 1,
+			}
+	)
+	
+	var senses_of_humor = {
+		"Dark": dark_sense_of_humor,
+		"Pets": pet_humor
+	}
+	return senses_of_humor[name]

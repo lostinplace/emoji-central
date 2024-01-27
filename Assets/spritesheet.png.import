@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr2sjbqqs77l"
-path="res://.godot/imported/PlayerArrows.png-39b8adf8f3fbd3b54d7a9d8a20150dde.ctex"
+uid="uid://bke6c57637hf1"
+path="res://.godot/imported/spritesheet.png-7eb74f42a71eaac58a7cbe0bb302bcda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PlayerArrows.png"
-dest_files=["res://.godot/imported/PlayerArrows.png-39b8adf8f3fbd3b54d7a9d8a20150dde.ctex"]
+source_file="res://Assets/spritesheet.png"
+dest_files=["res://.godot/imported/spritesheet.png-7eb74f42a71eaac58a7cbe0bb302bcda.ctex"]
 
 [params]
 

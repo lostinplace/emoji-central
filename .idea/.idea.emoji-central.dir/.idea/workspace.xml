@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bcbda12f-9aae-49ec-9030-72978389ae40" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/libraries/GdSdk_4_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/spritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/spritesheet.png.import" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scenes/area_2d.tscn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/garbage_spritesheet.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerArrows.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerArrows.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/bullet.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/bullet.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/JokeTypes.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/JokeTypes.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerStateMachine.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerStateMachine.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/bullet.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/bullet.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/player.gd" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Object empty" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2bWOxXAZASFcYKRRIlUhEZ6x3fJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Rebasing main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/christopherwheeler/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/Users/christopherwheeler/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/Users/christopherwheeler/.local/share/Symbols/src"
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bcbda12f-9aae-49ec-9030-72978389ae40" name="Changes" comment="" />
+      <created>1706327615990</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706327615990</updated>
+      <workItem from="1706327619927" duration="12000" />
+      <workItem from="1706327672050" duration="64000" />
+      <workItem from="1706327794415" duration="3160000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
