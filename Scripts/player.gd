@@ -18,9 +18,7 @@ var ghost = false
 @onready var animPlayer = $AnimationPlayer
 @onready var plBullet = preload("res://Scenes/bullet.tscn")
 var my_state_machine
-var psm = preload("res://Scripts/PlayerStateMachine.gd")
-var SenseOfHumor = psm.SenseOfHumor
-var my_sense_of_humor
+
 var JokeHopper = preload("res://Scripts/JokeHopper.gd").JokeHopper
 var my_joke_hopper
 
@@ -51,9 +49,10 @@ func _ready():
 	if has_meta("author"):
 		PlayerNumber = get_meta("PlayerNumber")
 		print(PlayerNumber)
-		
-	my_sense_of_humor = psm.get_sense_of_humor("Dark")
-	my_joke_hopper = JokeHopper.new(my_sense_of_humor.joke_distribution, 5)
+	
+	var tmp_category = preload("res://Scripts/bullet_spritesheet.gd").get_random_category()
+	var tmp_cat_name = tmp_category.category
+	my_joke_hopper = JokeHopper.new(tmp_cat_name, 5)
 	queue_rects = my_joke_hopper.get_sprite_rects()
 	
 	frozen = true;
@@ -77,7 +76,7 @@ func damage(dmg):
 
 func _input(event):
 	if !frozen:
-		if event.is_action_pressed("shoot") and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped():
+		if event.is_action_pressed("shoot") and ghost != true and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped() and ghost != true:
 			var next_joke = my_joke_hopper.dequeue_joke()
 			var bullet = plBullet.instantiate()
 			fireDelayTimer.start(firingDelay)
@@ -120,7 +119,9 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("BulletsGroup") :
 		print(body)
-		
-		damage(10);
+		var impacting_joke_type = body.joke.Category
+		var my_category = my_joke_hopper.my_category["category"]
+		if my_category == impacting_joke_type:
+			damage(10);
 		body.queue_free();
 	 # Replace with function body.

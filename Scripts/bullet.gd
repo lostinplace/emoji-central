@@ -6,7 +6,7 @@ var speed = 10
 func _ready():
 	pass # Replace with function body.
 
-var gs = preload("res://Scripts/garbage_spritesheet.gd")
+var bs = preload("res://Scripts/bullet_spritesheet.gd")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -14,6 +14,7 @@ func _process(delta):
 
 var bounceCount = 0
 const maxBounces = 4
+var joke
 
 func _physics_process(delta):
 
@@ -31,13 +32,8 @@ func _physics_process(delta):
 
 var jt = preload("res://Scripts/JokeTypes.gd")
 
-var JokeTypes = jt.JokeTypes
-
-var my_joketype = -1
-
-func set_joketype(my_joketype: int):
-	var rect = gs.get_sprite_rect(my_joketype)
+func set_joketype(_joke):
+	joke = _joke
+	var rect = bs.get_rect_for_joke(joke.JokeNumber, joke.Category)
 	$Sprite2D.region_rect = rect
 	
-
-

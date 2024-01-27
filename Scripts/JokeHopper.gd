@@ -1,38 +1,50 @@
+class Joke:
+	var JokeNumber: int
+	var Category: String
+
+	func _init(_joke_number: int, _category: String):
+		JokeNumber = _joke_number
+		Category = _category
+
+	static func get_random_joke_number() -> int:
+		# get a random number between 1 and 9
+		var result = randi() % 7 + 1
+		return result
+
+var bs = preload("res://Scripts/bullet_spritesheet.gd")
 
 class JokeHopper:
-	var joke_queue = []
+	var joke_queue : Array = []
 	var joke_distribution: Dictionary
 	var hopper_size
+	var my_category
 
-	func _init(_joke_distribution: Dictionary, _size: int):
-		joke_distribution = _joke_distribution
+	func _init(_category: String, _size: int):
+		
 		hopper_size = _size
+		var bs = preload("res://Scripts/bullet_spritesheet.gd")
+		
+		self.my_category = bs.categories[_category]
 		refill_hopper()
 
-	func dequeue_joke() -> int:
+	func dequeue_joke():
 		var result = joke_queue.pop_front()
-		if joke_queue.size() < hopper_size:
-			refill_hopper()
+		refill_hopper()
 		return result
 
 	func refill_hopper():
+		var bs = preload("res://Scripts/bullet_spritesheet.gd")
 		while joke_queue.size() < hopper_size:
-			var total_weight = 0
-			for weight in joke_distribution.values():
-				total_weight += weight
-
-			var random_choice = randi() % total_weight
-			var cumulative_weight = 0
-			for joke_type in joke_distribution.keys():
-				cumulative_weight += joke_distribution[joke_type]
-				if random_choice < cumulative_weight:
-					joke_queue.push_back(joke_type)
-					break
+			var joke_number = Joke.get_random_joke_number()
+			var joke_cat = bs.get_category_not_in_category(my_category) 
+			
+			var joke = Joke.new(joke_number, joke_cat.category)
+			joke_queue.append(joke)
 	
 	func get_sprite_rects() -> Array[Rect2]:
-		var spritesheet_control = preload("res://Scripts/garbage_spritesheet.gd")
+		var bs = preload("res://Scripts/bullet_spritesheet.gd")
 		var result: Array[Rect2] = []
-		for joke_type in joke_queue:
-			var rect = spritesheet_control.get_sprite_rect(joke_type)
+		for joke in joke_queue:
+			var rect = bs.get_rect_for_joke(joke.JokeNumber, joke.Category)
 			result.append(rect)
 		return result
