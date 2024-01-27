@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@onready var speed=randi_range(5,10)
+@onready var speed=randi_range(40,70)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
