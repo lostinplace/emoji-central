@@ -1,22 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://4t8lltp0c75x"]
+[gd_scene load_steps=5 format=3 uid="uid://4t8lltp0c75x"]
 
 [ext_resource type="Texture2D" uid="uid://dba4sc5670y6r" path="res://Assets/background.png" id="1_nqx3h"]
 [ext_resource type="PackedScene" uid="uid://sj575hj0a0eh" path="res://Scenes/player.tscn" id="2_8f3pn"]
 [ext_resource type="PackedScene" uid="uid://cvd3b2ciglhf2" path="res://Scenes/environment/wall_tiles.tscn" id="3_kaaxp"]
+[ext_resource type="PackedScene" uid="uid://b8pphq11vgv4e" path="res://Scenes/ui.tscn" id="4_owryk"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(702.222, 395)
+scale = Vector2(1.73148, 1.73148)
 texture = ExtResource("1_nqx3h")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_8f3pn")]
-position = Vector2(-45, -54)
+position = Vector2(646, 359)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.65, 0.65)
+position = Vector2(960, 540)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
 
 [node name="wallTiles" parent="." instance=ExtResource("3_kaaxp")]
-layer_0/tile_data = PackedInt32Array(-262152, 1, 0, -262151, 1, 0, -262150, 1, 0, -262149, 1, 0, -262148, 1, 0, -262147, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -393213, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 1, 0, -327673, 1, 0, -262137, 1, 0, -196601, 1, 0, -131065, 1, 0, -65529, 1, 0, 7, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 262150, 1, 0, 262149, 1, 0, 262148, 1, 0, 262147, 1, 0, 262146, 1, 0, 262145, 1, 0, 262144, 1, 0, 327679, 1, 0, 327678, 1, 0, 327677, 1, 0, 327676, 1, 0, 327675, 1, 0, 327674, 1, 0, 327673, 1, 0, 327672, 1, 0, 262136, 1, 0, 196600, 1, 0, 131064, 1, 0, 65528, 1, 0, -8, 1, 0, -65544, 1, 0, -131080, 1, 0, -196616, 1, 0, 4, 1, 0, 65540, 1, 0, 65539, 1, 0, 65538, 1, 0, -65532, 1, 0, -65541, 1, 0, -5, 1, 0, 65531, 1, 0, 131067, 1, 0, -65537, 1, 0, -131072, 1, 0, -131071, 1, 0)
+layer_0/tile_data = PackedInt32Array(458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 65538, 1, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 393218, 1, 0, 65548, 1, 0, 131084, 1, 0, 196620, 1, 0, 262156, 1, 0, 327692, 1, 0, 393228, 1, 0)
+
+[node name="Control" parent="." instance=ExtResource("4_owryk")]
