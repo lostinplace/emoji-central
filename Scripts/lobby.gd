@@ -5,10 +5,6 @@ extends Control
 
 var controllersPlaying = []
 var keyboardConnected = false
-@onready var label1 = $Label
-@onready var label2 = $Label2
-@onready var label3 = $Label3
-@onready var label4 = $Label4
 @onready var redsquare = $Red
 @onready var bluesquare = $Blue
 @onready var yellowsquare = $Yellow
@@ -40,22 +36,18 @@ func _input(event):
 
 func new_player_joined(ID):
 	if players == 0:
-		label1.text = str("Connected with device ", ID)
 		redsquare.frame = 2
 		bluesquare.frame = 4
 		singleton.player1 = ID
 	elif players == 1:
-		label2.text = str("Connected with device ", ID)
 		bluesquare.frame = 5
 		yellowsquare.frame = 7
 		singleton.player2 = ID
 	elif players == 2:
-		label3.text = str("Connected with device ", ID)
 		yellowsquare.frame = 8
 		greensquare.frame = 10
 		singleton.player3 = ID
 	elif players == 3:
-		label4.text = str("Connected with device ", ID)
 		greensquare.frame = 11
 		singleton.player4 = ID
 	players += 1
