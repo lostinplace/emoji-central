@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcbda12f-9aae-49ec-9030-72978389ae40" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Scenes/bullet.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/bullet.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scenes/main.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/main.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/ui.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/ui.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/JokeHopper.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/JokeHopper.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/garbage_spritesheet.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/garbage_spritesheet.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/player.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing main",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,7 +65,7 @@
       <updated>1706327615990</updated>
       <workItem from="1706327619927" duration="12000" />
       <workItem from="1706327672050" duration="64000" />
-      <workItem from="1706327794415" duration="3314000" />
+      <workItem from="1706327794415" duration="4455000" />
     </task>
     <servers />
   </component>
