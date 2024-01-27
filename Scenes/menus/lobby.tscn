@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1dces6a8l4u0"]
+[gd_scene load_steps=7 format=3 uid="uid://c1dces6a8l4u0"]
 
 [ext_resource type="Script" path="res://Scripts/lobby.gd" id="1_0irkq"]
 [ext_resource type="Texture2D" uid="uid://drhpkpvvovhpt" path="res://Assets/UI/LoadingBackGround.png" id="2_fayri"]
+[ext_resource type="Texture2D" uid="uid://bebsbpk6qe6y4" path="res://Assets/UI/LoadingStencilForLiningUp.png" id="3_fjtc3"]
+[ext_resource type="Texture2D" uid="uid://bwhdnpdojmm37" path="res://Assets/UI/startButton_Normal.png" id="4_txupg"]
+[ext_resource type="Texture2D" uid="uid://d2wqckdnea1s6" path="res://Assets/UI/startButton_Pressed.png" id="5_wvb3x"]
+[ext_resource type="Texture2D" uid="uid://dhxquccva1mpx" path="res://Assets/UI/startButton_Disabled.png" id="6_ef4sx"]
 
 [node name="lobby" type="Control"]
 layout_mode = 3
@@ -12,13 +16,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0irkq")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 803.0
-offset_top = 789.0
-offset_right = 1145.0
-offset_bottom = 862.0
-text = "START GAME"
+[node name="LoadingBackGround" type="Sprite2D" parent="."]
+position = Vector2(897.333, 509)
+scale = Vector2(1.05556, 1.05556)
+texture = ExtResource("2_fayri")
+
+[node name="LoadingStencilForLiningUp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(900.667, 510)
+scale = Vector2(1.06111, 1.06111)
+texture = ExtResource("3_fjtc3")
+
+[node name="Red" type="Sprite2D" parent="."]
+
+[node name="Blue" type="Sprite2D" parent="."]
+
+[node name="Yellow" type="Sprite2D" parent="."]
+
+[node name="Green" type="Sprite2D" parent="."]
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -80,9 +95,14 @@ offset_right = 1639.0
 offset_bottom = 683.0
 text = "PRESS E OR (A) TO JOIN"
 
-[node name="LoadingBackGround" type="Sprite2D" parent="."]
-position = Vector2(897.333, 509)
-scale = Vector2(1.05556, 1.05556)
-texture = ExtResource("2_fayri")
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 682.0
+offset_top = 852.0
+offset_right = 1296.0
+offset_bottom = 1007.0
+texture_normal = ExtResource("4_txupg")
+texture_pressed = ExtResource("5_wvb3x")
+texture_disabled = ExtResource("6_ef4sx")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_button_pressed"]
