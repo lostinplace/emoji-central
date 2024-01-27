@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1dces6a8l4u0"]
+[gd_scene load_steps=3 format=3 uid="uid://c1dces6a8l4u0"]
 
 [ext_resource type="Script" path="res://Scripts/lobby.gd" id="1_0irkq"]
+[ext_resource type="Texture2D" uid="uid://drhpkpvvovhpt" path="res://Assets/UI/LoadingBackGround.png" id="2_fayri"]
 
 [node name="lobby" type="Control"]
 layout_mode = 3
@@ -78,5 +79,10 @@ offset_top = 610.0
 offset_right = 1639.0
 offset_bottom = 683.0
 text = "PRESS E OR (A) TO JOIN"
+
+[node name="LoadingBackGround" type="Sprite2D" parent="."]
+position = Vector2(897.333, 509)
+scale = Vector2(1.05556, 1.05556)
+texture = ExtResource("2_fayri")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
