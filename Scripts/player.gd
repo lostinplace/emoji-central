@@ -49,8 +49,10 @@ func _ready():
 	if has_meta("author"):
 		PlayerNumber = get_meta("PlayerNumber")
 		print(PlayerNumber)
-		
-	my_joke_hopper = JokeHopper.new("Hands", 5)
+	
+	var tmp_category = preload("res://Scripts/bullet_spritesheet.gd").get_random_category()
+	var tmp_cat_name = tmp_category.category
+	my_joke_hopper = JokeHopper.new(tmp_cat_name, 5)
 	queue_rects = my_joke_hopper.get_sprite_rects()
 	
 	frozen = true;
@@ -117,7 +119,9 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("BulletsGroup") :
 		print(body)
-		
-		damage(10);
+		var impacting_joke_type = body.joke.Category
+		var my_category = my_joke_hopper.my_category["category"]
+		if my_category == impacting_joke_type:
+			damage(10);
 		body.queue_free();
 	 # Replace with function body.

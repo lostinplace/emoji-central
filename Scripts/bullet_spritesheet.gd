@@ -15,6 +15,14 @@ static var categories ={
 	"Animals": {"category": "Animals", "y-offset":7 }
 }
 
+static func get_random_category() -> Dictionary:
+	var keys = []
+	for key in categories:
+		keys.append(key)
+	var result = categories[keys[randi() % keys.size()]]
+	return result
+	
+
 static func get_rect_for_joke(joke_number:int, category_name: String) -> Rect2:
 	var category = categories[category_name]
 	var offset_y = category["y-offset"] * sprite_height
