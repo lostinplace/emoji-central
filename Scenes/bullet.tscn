@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_bn4gi"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
+mass = 0.01
+gravity_scale = 0.0
 script = ExtResource("1_w8hf8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
