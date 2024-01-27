@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Emojis"
-run/main_scene="res://Scenes/main.tscn"
+run/main_scene="res://Scenes/menus/lobby.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Singleton="*res://singleton.gd"
+Singleton="*res://Scripts/singleton.gd"
 
 [display]
 

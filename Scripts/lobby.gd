@@ -8,6 +8,7 @@ var keyboardConnected = false
 @onready var label1 = $Label
 @onready var label2 = $Label2
 @onready var label3 = $Label3
+@onready var label4 = $Label4
 var players = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -42,6 +43,9 @@ func new_player_joined(ID):
 	elif players == 2:
 		label3.text = str("Connected with device ", ID)
 		singleton.player3 = ID
+	elif players == 3:
+		label4.text = str("Connected with device ", ID)
+		singleton.player4 = ID
 	players += 1
 	singleton.playerCount += 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
