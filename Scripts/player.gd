@@ -28,6 +28,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var PlayerNumber
 var queue_rects: Array[Rect2]
 
+var frozen = false
+
 func _ready():
 	
 	PlayerNumber = get_meta("PlayerNumber")
@@ -64,16 +66,17 @@ func damage(dmg):
 
 
 func _input(event):
-	if event.is_action_pressed("shoot") and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped():
-		var next_joke = my_joke_hopper.dequeue_joke()
-		var bullet = plBullet.instantiate()
-		fireDelayTimer.start(firingDelay)
-		bullet.bulletOwner = self
-		bullet.set_joketype(next_joke)
-		queue_rects = my_joke_hopper.get_sprite_rects()
-		bullet.global_position = global_position
-		get_tree().current_scene.add_child(bullet)
-		bullet.velocity = lastLooked
+	if !frozen:
+		if event.is_action_pressed("shoot") and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped():
+			var next_joke = my_joke_hopper.dequeue_joke()
+			var bullet = plBullet.instantiate()
+			fireDelayTimer.start(firingDelay)
+			bullet.bulletOwner = self
+			bullet.set_joketype(next_joke)
+			queue_rects = my_joke_hopper.get_sprite_rects()
+			bullet.global_position = global_position
+			get_tree().current_scene.add_child(bullet)
+			bullet.velocity = lastLooked
 	if event.is_action_pressed("ui_cancel"):
 		damage(10)
 
