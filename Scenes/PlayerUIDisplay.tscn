@@ -20,8 +20,10 @@ script = ExtResource("1_2q6s5")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 538.0
-offset_bottom = 1208.0
+offset_left = -120.0
+offset_top = 44.0
+offset_right = 418.0
+offset_bottom = 1252.0
 theme = SubResource("Theme_h05o7")
 
 [node name="Label" type="Label" parent="Panel"]
@@ -58,25 +60,22 @@ offset_right = 459.0
 offset_bottom = 409.0
 
 [node name="q0" type="Sprite2D" parent="Panel"]
-position = Vector2(97.75, 358)
+position = Vector2(98, 358)
 scale = Vector2(1.5, 1.365)
 texture = ExtResource("3_w0848")
-hframes = 9
-vframes = 8
-region_rect = Rect2(0, 0, 131, 143)
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
 
 [node name="q1" type="Sprite2D" parent="Panel"]
-position = Vector2(256, 357)
+position = Vector2(254, 356)
 scale = Vector2(1.5, 1.365)
 texture = ExtResource("3_w0848")
-hframes = 9
-vframes = 8
-region_rect = Rect2(0, 0, 131, 143)
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
 
 [node name="q2" type="Sprite2D" parent="Panel"]
 position = Vector2(409, 360)
 scale = Vector2(1.5, 1.365)
 texture = ExtResource("3_w0848")
-hframes = 9
-vframes = 8
-region_rect = Rect2(0, 0, 131, 143)
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)

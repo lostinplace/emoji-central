@@ -1,7 +1,7 @@
 extends Node
 
-const sprite_height = 143;
-const sprite_width = 131;
+const sprite_height = 64;
+const sprite_width = 64;
 const sprite_size = Vector2(sprite_width, sprite_height)
 
 var spritesheet = preload("res://Assets/spritesheet.png")
