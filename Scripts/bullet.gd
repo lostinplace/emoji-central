@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 var velocity
 # Called when the node enters the scene tree for the first time.
