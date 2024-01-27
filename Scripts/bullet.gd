@@ -34,7 +34,7 @@ func set_joketype(type: int):
 	
 	
 	
-	var rect = gs.get_sprite_rect(row, col)
+	var rect = gs.get_sprite_rect(type)
 	$Sprite2D.region_rect = rect
 	
 

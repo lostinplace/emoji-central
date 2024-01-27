@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var arrow = $Sprite2D2
+@onready var fireDelayTimer = $fireDelay
+@export var firingDelay: float
 
 var keyboard = false
 var controllerID = 0
@@ -69,9 +71,10 @@ func damage(dmg):
 
 
 func _input(event):
-	if event.is_action_pressed("shoot") and keyboard == true or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A):
+	if event.is_action_pressed("shoot") and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped():
 		var next_joke = my_joke_hopper.dequeue_joke()
 		var bullet = plBullet.instantiate()
+		fireDelayTimer.start(firingDelay)
 		bullet.bulletOwner = self
 		bullet.set_joketype(next_joke)
 		var sprite_rects: Array[Rect2] = my_joke_hopper.get_sprite_rects()
