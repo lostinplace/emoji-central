@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyi0e0nos8ku1"]
 
-[ext_resource type="Script" path="res://singleton.gd" id="1_buwuj"]
+[ext_resource type="Script" path="res://Scripts/singleton.gd" id="1_buwuj"]
 
 [node name="singleton" type="Node2D"]
 script = ExtResource("1_buwuj")
