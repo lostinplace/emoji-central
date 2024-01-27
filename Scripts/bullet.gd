@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var bulletOwner
+
 var velocity
 var speed = 10
 # Called when the node enters the scene tree for the first time.
@@ -13,7 +15,11 @@ func _process(delta):
 	pass
 
 func _physics_process(delta):
+
 	global_position += velocity * speed
+	var collisionInfo = move_and_collide(velocity*delta)
+	if collisionInfo:
+		velocity = velocity.bounce(collisionInfo.get_normal())
 
 var jt = preload("res://Scripts/JokeTypes.gd")
 
@@ -31,3 +37,5 @@ func set_joketype(type: int):
 	var rect = gs.get_sprite_rect(row, col)
 	$Sprite2D.region_rect = rect
 	
+
+
