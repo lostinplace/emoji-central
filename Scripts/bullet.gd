@@ -14,6 +14,9 @@ var gs = preload("res://Scripts/garbage_spritesheet.gd")
 func _process(delta):
 	pass
 
+var bounceCount = 0
+const maxBounces = 4
+
 func _physics_process(delta):
 
 	global_position += velocity * speed
@@ -21,6 +24,12 @@ func _physics_process(delta):
 	if collisionInfo:
 		print("bounce")
 		velocity = velocity.bounce(collisionInfo.get_normal())
+		bounceCount += 1
+	
+	if bounceCount > maxBounces:
+		# destroy self
+		queue_free()
+		
 
 var jt = preload("res://Scripts/JokeTypes.gd")
 
