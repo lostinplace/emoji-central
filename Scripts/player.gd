@@ -55,6 +55,7 @@ func _input(event):
 	if event.is_action_pressed("shoot"):
 		var next_joke = my_joke_hopper.dequeue_joke()
 		var bullet = plBullet.instantiate()
+		bullet.bulletOwner = self
 		bullet.set_joketype(next_joke)
 		var sprite_rects: Array[Rect2] = my_joke_hopper.get_sprite_rects()
 		update_player_queue_control(sprite_rects)
@@ -76,3 +77,11 @@ func _physics_process(delta):
 		velocity= Vector2.ZERO;
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("BulletGroup") :
+		if body.bulletOwner != self:
+			damage(10);
+			body.queue_free();
+	 # Replace with function body.
