@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1dces6a8l4u0"]
+
+[ext_resource type="Script" path="res://lobby.gd" id="1_0irkq"]
+
+[node name="lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0irkq")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 789.0
+offset_right = 1145.0
+offset_bottom = 862.0
+text = "START GAME"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 789.0
+offset_right = 1145.0
+offset_bottom = 862.0
+text = "START GAME"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 324.0
+offset_right = 945.0
+offset_bottom = 640.0
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 328.0
+offset_right = 1291.0
+offset_bottom = 644.0
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1359.0
+offset_top = 320.0
+offset_right = 1669.0
+offset_bottom = 636.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 599.0
+offset_right = 878.0
+offset_bottom = 672.0
+text = "PRESS E OR (A) TO JOIN"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 601.0
+offset_right = 1223.0
+offset_bottom = 674.0
+text = "PRESS E OR (A) TO JOIN"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1433.0
+offset_top = 604.0
+offset_right = 1610.0
+offset_bottom = 677.0
+text = "PRESS E OR (A) TO JOIN"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
