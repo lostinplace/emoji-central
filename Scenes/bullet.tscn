@@ -14,7 +14,7 @@ script = ExtResource("1_v5e6l")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 self_modulate = Color(100, 100, 100, 1)
-scale = Vector2(0.77, 0.77)
+scale = Vector2(1.62, 1.62)
 texture = ExtResource("2_h0eu6")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
@@ -24,7 +24,7 @@ scale = Vector2(1.6, 1.6)
 shape = SubResource("CircleShape2D_2qlgt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("2_h0eu6")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
