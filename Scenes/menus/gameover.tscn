@@ -26,6 +26,7 @@ offset_bottom = 451.0
 theme_override_font_sizes/font_size = 111
 
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 856.0
 offset_top = 830.0
@@ -34,6 +35,7 @@ offset_bottom = 912.0
 text = "MAIN MENU"
 
 [node name="Button2" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 858.0
 offset_top = 927.0
@@ -73,3 +75,5 @@ vframes = 4
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
