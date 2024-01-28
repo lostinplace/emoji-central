@@ -131,6 +131,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="."]
+z_index = 80
 offset_left = 205.0
 offset_top = 1200.0
 offset_right = 1717.0
