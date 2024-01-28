@@ -9,7 +9,7 @@ func _ready():
 var bs = preload("res://Scripts/bullet_spritesheet.gd")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 var bounceCount = 0

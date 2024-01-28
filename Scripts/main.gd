@@ -32,7 +32,7 @@ func player_dies(player):
 		get_tree().change_scene_to_packed(winScreen)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
-func _process(delta):
+func _process(_delta):
 	for i in players.size():
 		var this_player = players[i]
 		var player_rects = this_player.queue_rects

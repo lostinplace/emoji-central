@@ -9,7 +9,7 @@ func _ready():
 	$Winner.frame = 9*singleton.winner
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 

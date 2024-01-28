@@ -60,7 +60,7 @@ func new_player_joined(ID):
 	players += 1
 	singleton.playerCount += 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 

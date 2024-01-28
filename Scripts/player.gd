@@ -32,7 +32,6 @@ var queue_rects: Array[Rect2]
 var frozen = false
 
 func _ready():
-	
 	PlayerNumber = get_meta("PlayerNumber")
 	print(PlayerNumber)
 	if playerNum == 0:
@@ -93,10 +92,10 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		damage(10)
 
-func _process(delta):
+func _process(_delta):
 	arrow.rotation = lastLooked.angle() - deg_to_rad(90)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	if !frozen:
 		#movement
