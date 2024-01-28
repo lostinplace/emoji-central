@@ -128,7 +128,7 @@ func _on_area_2d_body_entered(body):
 	 # Replace with function body.
 
 		
-	extends Node
+	#extends Node
 
 
 ## This method plays an audio stream for a specific duration from a given offset
