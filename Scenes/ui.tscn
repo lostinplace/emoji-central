@@ -81,10 +81,10 @@ metadata/PlayerName = "P3"
 modulate = Color(1, 0.607843, 0.380392, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 849.0
-offset_top = 471.0
-offset_right = 1099.0
-offset_bottom = 778.0
+offset_left = 785.0
+offset_top = 463.0
+offset_right = 1035.0
+offset_bottom = 770.0
 theme_override_fonts/font = ExtResource("3_38681")
 text = "3"
 label_settings = SubResource("LabelSettings_rd31c")
@@ -93,10 +93,10 @@ horizontal_alignment = 1
 [node name="ColorRect" type="ColorRect" parent="Countdown"]
 z_index = -1
 layout_mode = 0
-offset_left = -614.0
-offset_top = -485.0
-offset_right = 825.0
-offset_bottom = 628.0
+offset_left = -550.0
+offset_top = -477.0
+offset_right = 889.0
+offset_bottom = 636.0
 color = Color(0, 0, 0, 0.533333)
 
 [node name="RedBorder" type="Sprite2D" parent="."]
