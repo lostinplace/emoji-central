@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://pmj0410jmmjc"]
+[gd_scene load_steps=10 format=3 uid="uid://pmj0410jmmjc"]
 
 [ext_resource type="Script" path="res://Scripts/lightning.gd" id="1_to0fx"]
 [ext_resource type="Texture2D" uid="uid://coyb1268klmlw" path="res://Assets/explosion.png" id="2_xp51u"]
 [ext_resource type="Texture2D" uid="uid://ds4ggq27pan50" path="res://Assets/alert.png" id="3_0a5k2"]
 [ext_resource type="Texture2D" uid="uid://c54fvccab01w8" path="res://Assets/lightning.png" id="4_vxibu"]
-[ext_resource type="AudioStream" uid="uid://b4et5uavf5g1d" path="res://Assets/Sounds/fx/Lighting_SFX.mp3" id="5_jqr1v"]
+[ext_resource type="AudioStream" uid="uid://b4et5uavf5g1d" path="res://Assets/Sounds/fx/Lighting_SFX.mp3" id="5_3ymi0"]
 
 [sub_resource type="Animation" id="Animation_t76wn"]
 length = 0.001
@@ -246,5 +246,9 @@ visible = false
 position = Vector2(247, -1067)
 scale = Vector2(0.5, 2)
 texture = ExtResource("4_vxibu")
+
+[node name="Thunder" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3ymi0")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
