@@ -120,6 +120,7 @@ func _input(event):
 			var bullet_position = global_position + lastLooked * 40
 			bullet.global_position = bullet_position
 			
+			
 			get_tree().current_scene.add_child(bullet)
 			for w in weaknesses.size():
 				if weaknesses[w] == next_joke.Category:
