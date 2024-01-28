@@ -18,7 +18,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if state == 1:
 		progressBar.value = timer.wait_time - timer.time_left
 	elif state == 2:
@@ -28,6 +28,12 @@ func aliens():
 	for i in 8:
 		var alien = plAliens.instantiate()
 		alienNode.add_child(alien)
+
+func do_blackout():
+	blackout.visible = true
+	$BlackoutSound.play()
+	progressBar.max_value = 4
+	timer.start(4)
 
 func lightning_shower(): #it says meteor because it was a meteor and i dont feel like fixing it
 	for i in 4:
@@ -63,9 +69,7 @@ func _on_timer_timeout():
 		elif events.front() == "aliens!":
 			aliens()
 		elif events.front() == "blackout":
-			blackout.visible = true
-			progressBar.max_value = 4
-			timer.start(4)
+			do_blackout()
 		progressBar.max_value = 20
 		animPlayer.play("event")
 		state = 2

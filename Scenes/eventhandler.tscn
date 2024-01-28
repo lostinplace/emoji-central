@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://baysch2d7ohf5"]
+[gd_scene load_steps=11 format=3 uid="uid://baysch2d7ohf5"]
 
 [ext_resource type="Script" path="res://Scenes/eventhandler.gd" id="1_eb2o3"]
 [ext_resource type="AudioStream" uid="uid://b4et5uavf5g1d" path="res://Assets/Sounds/fx/Lighting_SFX.mp3" id="2_ckw5b"]
 [ext_resource type="FontFile" uid="uid://dsrj86ask6um1" path="res://Assets/fonts/cut it out DEMO.otf" id="2_gwkv0"]
+[ext_resource type="AudioStream" uid="uid://cep0wf2kq6ohq" path="res://Assets/Sounds/fx/Blackout_4sec.wav" id="4_5waht"]
 
 [sub_resource type="Animation" id="Animation_n8e1b"]
 length = 0.001
@@ -152,5 +153,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="ThunderSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ckw5b")
+
+[node name="BlackoutSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5waht")
+volume_db = 20.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
