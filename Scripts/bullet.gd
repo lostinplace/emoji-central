@@ -7,7 +7,7 @@ var speed = 8
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass# Replace with function body.
 
 var bs = preload("res://Scripts/bullet_spritesheet.gd")
 
@@ -27,7 +27,6 @@ func _physics_process(delta):
 	global_position += velocity * speed
 	var collisionInfo = move_and_collide(velocity*delta)
 	if collisionInfo:
-		print("bounce")
 		velocity = velocity.bounce(collisionInfo.get_normal())
 		bounceCount += 1
 	
