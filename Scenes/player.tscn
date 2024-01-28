@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://sj575hj0a0eh"]
+[gd_scene load_steps=13 format=3 uid="uid://sj575hj0a0eh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wef07"]
 [ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_c47p8"]
+[ext_resource type="Texture2D" uid="uid://0wua8q5ti6fd" path="res://Assets/UI/CowboyHatCombined.png" id="3_b4xd8"]
 [ext_resource type="Texture2D" uid="uid://dkkvn0x447av6" path="res://Assets/PlayerArrows.png" id="3_x4shv"]
 [ext_resource type="PackedScene" uid="uid://dd31njmxjjw86" path="res://Scenes/PlayerUIDisplayMini.tscn" id="4_x5t8j"]
 [ext_resource type="AudioStream" uid="uid://4thi64npfu3e" path="res://Assets/Sounds/fx/Fruit_v1.wav" id="5_rh4ke"]
@@ -61,6 +62,10 @@ texture = ExtResource("2_c47p8")
 hframes = 9
 vframes = 4
 
+[node name="HatSprite" type="Sprite2D" parent="Sprite2D"]
+visible = false
+texture = ExtResource("3_b4xd8")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_r4vb7")
@@ -83,6 +88,7 @@ shape = SubResource("CircleShape2D_hafrt")
 one_shot = true
 
 [node name="Base" parent="." instance=ExtResource("4_x5t8j")]
+visible = false
 offset_left = 29.0
 offset_top = -30.0
 offset_right = 29.0
