@@ -23,7 +23,7 @@ Singleton="*res://Scripts/singleton.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [editor_plugins]
@@ -125,3 +125,4 @@ shoot2={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
