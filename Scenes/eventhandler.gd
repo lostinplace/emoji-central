@@ -42,11 +42,6 @@ func _input(event):
 		lightning_shower()
 
 func _on_timer_timeout():
-	
-	#var filter = AudioEffectFilter.new()
-	#filter.cutoff_hz = 1000 # Set the cutoff frequency to 5000 Hz
-	#filter.resonance = 0.5  # Set the resonance value
-	
 	if state == 0:
 		events.shuffle()
 		progressBarLabel.text = events.front()
