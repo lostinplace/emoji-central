@@ -126,7 +126,7 @@ func _input(event):
 			fireDelayTimer.start(firingDelay)
 			bullet.set_joketype(next_joke)
 			queue_rects = my_joke_hopper.get_sprite_rects()
-			var bullet_position = global_position + lastLooked * 50
+			var bullet_position = global_position + lastLooked * 55
 			bullet.global_position = bullet_position
 			if weakness_color != null:
 				bullet.change_outline_color(weakness_color)
