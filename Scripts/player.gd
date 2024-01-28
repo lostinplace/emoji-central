@@ -99,7 +99,7 @@ func set_jokehopper(category_name: String):
 
 func damage(dmg):
 	life -= dmg
-	sprite.frame = life/10 + (9 * playerNum)
+	sprite.frame = life/10 + (9 * playerNum) -1
 	if life > 69:
 		life = 70
 		sprite.frame = 6 + (playerNum * 9)
