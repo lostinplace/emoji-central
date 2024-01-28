@@ -26,6 +26,12 @@ static var unused_categories = {
 	"Animals": {"category": "Animals", "y-offset":7 }
 }
 
+static func get_random_category_names():
+	var cat_names = categories.keys()
+	cat_names.shuffle()
+	return cat_names
+	
+
 static func get_unused_category() -> Dictionary:
 	var keys = []
 	for key in unused_categories:

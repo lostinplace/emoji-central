@@ -9,7 +9,6 @@
 script = ExtResource("1_1x477")
 
 [node name="PowerupSprite" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_xdhrf")
 hframes = 9
 vframes = 9

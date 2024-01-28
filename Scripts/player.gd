@@ -64,24 +64,31 @@ func _ready():
 	var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
 	var tmp_category = spritesheet.get_unused_category()
 	var tmp_cat_name = tmp_category.category
-	my_joke_hopper = JokeHopper.new(tmp_cat_name, 5)
-	queue_rects = my_joke_hopper.get_sprite_rects()
+	
+	set_jokehopper(tmp_cat_name)
 	
 	frozen = true;
 	
 	await get_tree().create_timer(3).timeout
 	get_tree()
-	for i in main.players.size():
-		weaknesses.append(main.players[i].get_category())
+	
 	frozen = false
 	regenDelay.start(regen)
 
 var sense_of_humor
 
+func peek_next_joke():
+	return my_joke_hopper.joke_queue[0]
+	
+
 func get_category():
 	return my_joke_hopper.my_category["category"]
 
 var audio_tools = preload("res://Scripts/audio_tools.gd")
+
+func set_jokehopper(category_name: String):
+	my_joke_hopper = JokeHopper.new(category_name, 5)
+	queue_rects = my_joke_hopper.get_sprite_rects()
 
 
 func damage(dmg):

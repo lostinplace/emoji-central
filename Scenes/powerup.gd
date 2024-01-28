@@ -13,8 +13,9 @@ var spriteFrame = 75;
 func _ready():
 	spriteFrame = powerupSprite.frame;
 	var rand = RandomNumberGenerator.new()
-	
-	var randomNumber = rand.randi_range(72,81)
+	var possiblePowerups = [72,73,79,75,76,78];
+	possiblePowerups.shuffle();
+	var randomNumber = possiblePowerups[0]
 	spriteFrame = randomNumber;
 	powerupSprite.frame = randomNumber;
 
