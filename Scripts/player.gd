@@ -9,6 +9,7 @@ const JUMP_VELOCITY = -400.0
 
 var main
 var keyboard = false
+var keyboard2 = false
 var controllerID = 0
 var playerNum = 0
 var lastLooked = Vector2(1, 0)
@@ -44,6 +45,8 @@ func _ready():
 		controllerID = singleton.player4
 	if controllerID == 4:
 		keyboard = true
+	if controllerID == 5:
+		keyboard2 = true
 	sprite.frame = 6 + (playerNum * 9)
 	arrow.frame = playerNum
 	if has_meta("author"):
@@ -76,7 +79,7 @@ func damage(dmg):
 
 func _input(event):
 	if !frozen:
-		if event.is_action_pressed("shoot") and ghost != true and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped() and ghost != true:
+		if event.is_action_pressed("shoot2") and ghost != true and keyboard2 == true and fireDelayTimer.is_stopped() or event.is_action_pressed("shoot") and ghost != true and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped() and ghost != true:
 			var next_joke = my_joke_hopper.dequeue_joke()
 			var bullet = plBullet.instantiate()
 			fireDelayTimer.start(firingDelay)
@@ -86,7 +89,7 @@ func _input(event):
 			bullet.global_position = bullet_position
 			
 			get_tree().current_scene.add_child(bullet)
-			bullet.velocity = lastLooked
+			bullet.velocity = lastLooked.normalized()
 	if event.is_action_pressed("ui_cancel"):
 		damage(10)
 
@@ -102,9 +105,14 @@ func _physics_process(delta):
 		direction.x -= Input.get_joy_axis(controllerID, JOY_AXIS_LEFT_X) *-1
 		direction.y -= Input.get_joy_axis(controllerID, JOY_AXIS_LEFT_Y) *-1
 
+		if keyboard2 == true:
+			direction = Vector2(Input.get_axis("left2", "right2"), Input.get_axis("up2", "down2"))
+			direction = direction.normalized()
+
 		if keyboard == true:
 			direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 			direction = direction.normalized()
+		
 		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
 			#direction.x -= 1
 		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):

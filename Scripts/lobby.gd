@@ -5,6 +5,7 @@ extends Control
 
 var controllersPlaying = []
 var keyboardConnected = false
+var keyboard2Connected = false
 @onready var redsquare = $Red
 @onready var bluesquare = $Blue
 @onready var yellowsquare = $Yellow
@@ -33,7 +34,13 @@ func _input(event):
 		if keyboardConnected == false:
 			keyboardConnected = true
 			new_player_joined(4)
-
+	
+	if event.is_action_pressed("shoot2"):
+		if keyboard2Connected == false:
+			keyboard2Connected = true
+			new_player_joined(5)
+			#print("keyboard 2 joined")
+			
 func new_player_joined(ID):
 	if players == 0:
 		redsquare.frame = 2
