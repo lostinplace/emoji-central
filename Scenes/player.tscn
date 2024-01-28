@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://sj575hj0a0eh"]
+[gd_scene load_steps=14 format=3 uid="uid://sj575hj0a0eh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wef07"]
 [ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_c47p8"]
 [ext_resource type="Texture2D" uid="uid://0wua8q5ti6fd" path="res://Assets/UI/CowboyHatCombined.png" id="3_b4xd8"]
 [ext_resource type="Texture2D" uid="uid://dkkvn0x447av6" path="res://Assets/PlayerArrows.png" id="3_x4shv"]
-[ext_resource type="PackedScene" uid="uid://dd31njmxjjw86" path="res://Scenes/PlayerUIDisplayMini.tscn" id="4_x5t8j"]
+[ext_resource type="PackedScene" path="res://Scenes/PlayerUIDisplayMini.tscn" id="4_x5t8j"]
 [ext_resource type="AudioStream" uid="uid://4thi64npfu3e" path="res://Assets/Sounds/fx/Fruit_v1.wav" id="5_rh4ke"]
 [ext_resource type="AudioStream" uid="uid://cm7gldl53yu32" path="res://Assets/Sounds/fx/Pickup UI_v1.wav" id="6_o4w6q"]
+[ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="8_bfyeu"]
 
 [sub_resource type="Animation" id="Animation_encp2"]
 length = 0.001
@@ -105,6 +106,20 @@ stream = ExtResource("5_rh4ke")
 
 [node name="PickupAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_o4w6q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -81.0
+offset_right = 20.0
+offset_bottom = -41.0
+color = Color(1, 1, 1, 0.529412)
+
+[node name="q0" type="Sprite2D" parent="ColorRect"]
+position = Vector2(259.5, 1011.16)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("8_bfyeu")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
