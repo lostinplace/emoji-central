@@ -35,6 +35,7 @@ func lightning_shower(): #it says meteor because it was a meteor and i dont feel
 			var meteor = plMeteor.instantiate()
 			main.add_child(meteor)
 		await get_tree().create_timer(4).timeout
+	$ThunderSound.play()
 
 func _on_timer_timeout():
 	if state == 0:

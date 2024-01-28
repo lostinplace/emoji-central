@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcedcmr16n458"]
+[gd_scene load_steps=14 format=3 uid="uid://dcedcmr16n458"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_7nm6v"]
 [ext_resource type="Texture2D" uid="uid://y1o25ocivpg0" path="res://Assets/UI/HUDBackgrounds.png" id="2_o6hoa"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/LevelMusic.gd" id="8_6b12f"]
 [ext_resource type="AudioStream" uid="uid://bkcxrqrsf8s4p" path="res://Assets/Sounds/music/Emoji Central_Phase2.mp3" id="8_cspd2"]
 [ext_resource type="AudioStream" uid="uid://dvyn6sbh4d8ab" path="res://Assets/Sounds/fx/Count down_v1.wav" id="9_vyg0l"]
+[ext_resource type="AudioStream" uid="uid://c4p0mgj2b5oso" path="res://Assets/Sounds/fx/Game Start_v1.wav" id="12_lohn8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rd31c"]
 font_size = 200
@@ -81,10 +82,10 @@ metadata/PlayerName = "P3"
 modulate = Color(1, 0.607843, 0.380392, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 849.0
-offset_top = 471.0
-offset_right = 1099.0
-offset_bottom = 778.0
+offset_left = 785.0
+offset_top = 463.0
+offset_right = 1035.0
+offset_bottom = 770.0
 theme_override_fonts/font = ExtResource("3_38681")
 text = "3"
 label_settings = SubResource("LabelSettings_rd31c")
@@ -93,10 +94,10 @@ horizontal_alignment = 1
 [node name="ColorRect" type="ColorRect" parent="Countdown"]
 z_index = -1
 layout_mode = 0
-offset_left = -614.0
-offset_top = -485.0
-offset_right = 825.0
-offset_bottom = 628.0
+offset_left = -550.0
+offset_top = -477.0
+offset_right = 889.0
+offset_bottom = 636.0
 color = Color(0, 0, 0, 0.533333)
 
 [node name="RedBorder" type="Sprite2D" parent="."]
@@ -125,3 +126,6 @@ script = ExtResource("8_6b12f")
 
 [node name="CountdownA" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_vyg0l")
+
+[node name="MatchStart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_lohn8")

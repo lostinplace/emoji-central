@@ -115,11 +115,6 @@ func damage(dmg):
 	var st = get_tree()
 	audio_tools.play_audio_for_duration(st, $DamageAudio, 0, 500)
 	
-	
-
-
-
-
 func _input(event):
 	if !frozen:
 		if event.is_action_pressed("shoot2") and ghost != true and keyboard2 == true and fireDelayTimer.is_stopped() or event.is_action_pressed("shoot") and ghost != true and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped() and ghost != true:

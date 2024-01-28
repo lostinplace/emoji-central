@@ -7,6 +7,7 @@ var speed = 8
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	sprite.scale = Vector2(1.5, 1.5)
 	pass # Replace with function body.
 
 var bs = preload("res://Scripts/bullet_spritesheet.gd")
@@ -17,7 +18,8 @@ func _process(_delta):
 
 func change_outline_color(color):
 	outline.modulate = color
-
+	#outline.scale = Vector2(1.5, 1.5)
+	
 var bounceCount = 0
 const maxBounces = 4
 var joke

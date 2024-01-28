@@ -17,7 +17,7 @@ func _ready():
 	$CountdownA.play()
 	await get_tree().create_timer(1).timeout
 	countdownText.visible = false;
-	
+	$MatchStart.play()
 	$Music.play()
 
 
