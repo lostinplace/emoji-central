@@ -124,4 +124,64 @@ func _on_area_2d_body_entered(body):
 		if my_category == impacting_joke_type:
 			damage(10);
 		body.queue_free();
+
+		
 	 # Replace with function body.
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("PowerupGroup") :
+		print(area.spriteFrame)
+		
+		var spriteFrame = area.spriteFrame;
+		
+		#Heart
+		if(spriteFrame == 72):
+			#Heal some health
+			print("heal")
+			life += 10
+			if life >= 70:
+				life = 70;
+				sprite.frame = 6 + (playerNum * 9)
+			else:
+				print(life)
+				sprite.frame = life/10 + (9 * playerNum)
+			
+		
+		# ice block
+		if(spriteFrame == 73):
+			print("slip")
+			# take away control for a few seconds
+			frozen = true;
+			await get_tree().create_timer(1.5).timeout
+			frozen = false
+			
+		#shot/running
+		if(spriteFrame == 75):
+			SPEED*=1.5;
+			await get_tree().create_timer(3).timeout
+			SPEED = 300;
+			
+			
+		
+		#cheese trap
+		if(spriteFrame == 76):
+			velocity= Vector2.ZERO;
+			#Stop all movement
+			frozen = true;
+			await get_tree().create_timer(2).timeout
+			frozen = false
+
+
+		
+		
+
+		#74 shield
+		#75 shot
+		#77 timer
+		#78 bandaid
+		#79 magnet
+		#80 skull
+		
+		print("hit powerup")
+
