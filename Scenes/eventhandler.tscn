@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://baysch2d7ohf5"]
+[gd_scene load_steps=9 format=3 uid="uid://baysch2d7ohf5"]
 
 [ext_resource type="Script" path="res://Scenes/eventhandler.gd" id="1_eb2o3"]
+[ext_resource type="AudioStream" uid="uid://b4et5uavf5g1d" path="res://Assets/Sounds/fx/Lighting_SFX.mp3" id="2_ckw5b"]
 
 [sub_resource type="Animation" id="Animation_n8e1b"]
 length = 0.001
@@ -145,5 +146,8 @@ offset_bottom = 1096.0
 color = Color(0, 0, 0, 1)
 
 [node name="alienNode" type="Node2D" parent="."]
+
+[node name="ThunderSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ckw5b")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
