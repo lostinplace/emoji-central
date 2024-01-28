@@ -11,6 +11,7 @@ var spriteFrame = 75;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimationPlayer.play("pulse")
 	spriteFrame = powerupSprite.frame;
 	var rand = RandomNumberGenerator.new()
 	var possiblePowerups = [72,73,79,75,76,78];
