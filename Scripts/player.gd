@@ -79,6 +79,9 @@ var sense_of_humor
 func get_category():
 	return my_joke_hopper.my_category["category"]
 
+var audio_tools = preload("res://Scripts/audio_tools.gd")
+
+
 func damage(dmg):
 	life -= dmg
 	sprite.frame = life/10 + (9 * playerNum)
@@ -94,6 +97,12 @@ func damage(dmg):
 	if dmg > 0:
 		animPlayer.stop()
 		animPlayer.play("damage_flash")
+	var st = get_tree()
+	audio_tools.play_audio_for_duration(st, $DamageAudio, 0, 500)
+	
+	
+
+
 
 
 func _input(event):

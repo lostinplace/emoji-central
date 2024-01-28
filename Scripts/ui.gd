@@ -9,7 +9,7 @@ var Player1_Sprites: Array[Sprite2D]
 func _ready():
 	countdownText.text=("3")
 	await get_tree().create_timer(1).timeout
-	countdownText.text=("2")
+	countdownText.text=("two")
 	await get_tree().create_timer(1).timeout
 	countdownText.text=("1")
 	await get_tree().create_timer(1).timeout
