@@ -30,8 +30,8 @@ var ghost = false
 var my_state_machine
 
 var JokeHopper = preload("res://Scripts/JokeHopper.gd").JokeHopper
-var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
 var my_joke_hopper
+var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -64,7 +64,7 @@ func _ready():
 		PlayerNumber = get_meta("PlayerNumber")
 		print(PlayerNumber)
 	
-
+	var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
 	var tmp_category = spritesheet.get_unused_category()
 	var tmp_cat_name = tmp_category.category
 	
@@ -75,8 +75,6 @@ func _ready():
 	await get_tree().create_timer(3).timeout
 	get_tree()
 	
-	for i in main.players.size():
-		weaknesses.append(main.players[i].get_category())
 	update_next_joke_icon()
 	frozen = false
 	regenDelay.start(regen)
@@ -99,7 +97,7 @@ func set_jokehopper(category_name: String):
 
 func damage(dmg):
 	life -= dmg
-	sprite.frame = life/10 + (9 * playerNum) -1
+	sprite.frame = life/10 + (9 * playerNum) - 1
 	if life > 69:
 		life = 70
 		sprite.frame = 6 + (playerNum * 9)
@@ -120,13 +118,15 @@ func _input(event):
 		if event.is_action_pressed("shoot2") and ghost != true and keyboard2 == true and fireDelayTimer.is_stopped() or event.is_action_pressed("shoot") and ghost != true and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped() and ghost != true:
 			var next_joke = my_joke_hopper.dequeue_joke()
 			var bullet = plBullet.instantiate()
+			var weakness_color = main.weakness_colors.get(next_joke.Category)
+
 			fireDelayTimer.start(firingDelay)
 			bullet.set_joketype(next_joke)
 			queue_rects = my_joke_hopper.get_sprite_rects()
-			var bullet_position = global_position + lastLooked * 40
+			var bullet_position = global_position + lastLooked * 55
 			bullet.global_position = bullet_position
-			
-			
+			if weakness_color != null:
+				bullet.change_outline_color(weakness_color)
 			get_tree().current_scene.add_child(bullet)
 			bullet.velocity = lastLooked.normalized()
 			update_next_joke_icon()

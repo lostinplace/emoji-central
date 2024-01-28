@@ -37,11 +37,11 @@ func lightning_shower(): #it says meteor because it was a meteor and i dont feel
 		await get_tree().create_timer(4).timeout
 	$ThunderSound.play()
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		lightning_shower()
+
 func _on_timer_timeout():
-	#var filter = AudioEffectFilter.new()
-	#filter.cutoff_hz = 1000 # Set the cutoff frequency to 5000 Hz
-	#filter.resonance = 0.5  # Set the resonance value
-	
 	if state == 0:
 		events.shuffle()
 		progressBarLabel.text = events.front()
@@ -66,9 +66,6 @@ func _on_timer_timeout():
 			blackout.visible = true
 			progressBar.max_value = 4
 			timer.start(4)
-
-			# Now, let's add this effect to an Audio Bus
-			#AudioServer.add_bus_effect(0, filter)
 		progressBar.max_value = 20
 		animPlayer.play("event")
 		state = 2
@@ -82,7 +79,6 @@ func _on_timer_timeout():
 				main.players[i].speedMod = 1.0
 		elif events.front() == "blackout":
 			blackout.visible = false
-			#AudioServer.remove_bus_effect (0,filter)
 		elif events.front() == "aliens!":
 			for i in alienNode.get_child_count():
 				alienNode.get_child(i).queue_free()
