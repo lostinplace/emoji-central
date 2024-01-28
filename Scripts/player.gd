@@ -185,7 +185,7 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_area_entered(area):
-	if area.is_in_group("PowerupGroup") :
+	if area.is_in_group("PowerupGroup") &&  !ghost:
 		print(area.spriteFrame)
 		
 		var spriteFrame = area.spriteFrame;
@@ -232,6 +232,10 @@ func _on_area_2d_area_entered(area):
 			frozen = true;
 			await get_tree().create_timer(2).timeout
 			frozen = false
+			
+		#hat
+		if(spriteFrame == 78):
+			$Sprite2D/HatSprite.visible = true;
 
 
 		
