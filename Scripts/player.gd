@@ -127,9 +127,6 @@ func _on_area_2d_body_entered(body):
 		body.queue_free();
 	 # Replace with function body.
 
-		
-	extends Node
-
 
 ## This method plays an audio stream for a specific duration from a given offset
 #func play_audio_for_duration(stream, offset_ms, duration_s):
