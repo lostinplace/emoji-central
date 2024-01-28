@@ -95,3 +95,17 @@ scale = Vector2(3.78125, 3.71286)
 texture = ExtResource("3_w0848")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
+
+[node name="q3" type="Sprite2D" parent="Panel"]
+position = Vector2(439, 362)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("3_w0848")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="q4" type="Sprite2D" parent="Panel"]
+position = Vector2(439, 362)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("3_w0848")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)

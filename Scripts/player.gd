@@ -52,6 +52,8 @@ func _ready():
 		controllerID = singleton.player4
 	if controllerID == 4:
 		keyboard = true
+	if controllerID == 5:
+		keyboard2 = true
 	sprite.frame = 6 + (playerNum * 9)
 	arrow.frame = playerNum
 	if has_meta("author"):

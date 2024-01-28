@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://sj575hj0a0eh"]
+[gd_scene load_steps=10 format=3 uid="uid://sj575hj0a0eh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wef07"]
 [ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_c47p8"]
 [ext_resource type="Texture2D" uid="uid://dkkvn0x447av6" path="res://Assets/PlayerArrows.png" id="3_x4shv"]
-[ext_resource type="PackedScene" path="res://Scenes/PlayerUIDisplayMini.tscn" id="4_x5t8j"]
+[ext_resource type="PackedScene" uid="uid://dd31njmxjjw86" path="res://Scenes/PlayerUIDisplayMini.tscn" id="4_x5t8j"]
+[ext_resource type="PackedScene" uid="uid://dwotayg5o1mws" path="res://Scenes/PlayerUIDisplay.tscn" id="5_t5pag"]
 
 [sub_resource type="Animation" id="Animation_encp2"]
 length = 0.001
@@ -82,6 +83,12 @@ offset_bottom = -30.0
 scale = Vector2(0.3, 0.3)
 
 [node name="regenDelay" type="Timer" parent="."]
+
+[node name="Base2" parent="." instance=ExtResource("5_t5pag")]
+offset_left = 215.0
+offset_top = -152.0
+offset_right = 215.0
+offset_bottom = -152.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
