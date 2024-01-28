@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://p20bwwj6vrv2"]
+
+[ext_resource type="Texture2D" uid="uid://dydeyxawvap37" path="res://Assets/UFO.png" id="1_fukpc"]
+[ext_resource type="Script" path="res://Scenes/alien.gd" id="1_jqe1j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agigc"]
+radius = 43.0116
+
+[node name="alien" type="RigidBody2D" groups=["alien"]]
+z_index = 1
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_jqe1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_agigc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("1_fukpc")

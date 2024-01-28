@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvd3b2ciglhf2"]
+[gd_scene load_steps=8 format=3 uid="uid://cvd3b2ciglhf2"]
 
 [ext_resource type="Texture2D" uid="uid://cikq2qna4th1h" path="res://Assets/bricks.png" id="1_d7nse"]
+[ext_resource type="Script" path="res://Scripts/wall_tiles.gd" id="2_kwon7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0snai"]
 texture = ExtResource("1_d7nse")
@@ -13,6 +14,48 @@ texture = ExtResource("1_d7nse")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0snai")
 
+[sub_resource type="Animation" id="Animation_scgmb"]
+resource_name = "player_eliminated"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.86607, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kfivj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4s7j2"]
+_data = {
+"RESET": SubResource("Animation_kfivj"),
+"player_eliminated": SubResource("Animation_scgmb")
+}
+
 [node name="wallTiles" type="TileMap"]
 tile_set = SubResource("TileSet_2jw1j")
 format = 2
+script = ExtResource("2_kwon7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4s7j2")
+}
