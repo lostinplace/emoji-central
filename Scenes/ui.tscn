@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcedcmr16n458"]
+[gd_scene load_steps=13 format=3 uid="uid://dcedcmr16n458"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_7nm6v"]
+[ext_resource type="Texture2D" uid="uid://y1o25ocivpg0" path="res://Assets/UI/HUDBackgrounds.png" id="2_o6hoa"]
 [ext_resource type="FontFile" uid="uid://dsrj86ask6um1" path="res://Assets/fonts/cut it out DEMO.otf" id="3_38681"]
 [ext_resource type="Texture2D" uid="uid://c0pf1fwwyjudn" path="res://Assets/red_border.png" id="3_lbe8i"]
 [ext_resource type="Texture2D" uid="uid://cu36ka43xer6k" path="res://Assets/blue_border.png" id="4_wbuc7"]
@@ -21,27 +22,50 @@ anchor_right = 1.0
 grow_horizontal = 2
 script = ExtResource("1_7nm6v")
 
+[node name="Red BG" type="Sprite2D" parent="."]
+position = Vector2(111, 280)
+texture = ExtResource("2_o6hoa")
+hframes = 4
+
+[node name="Blue" type="Sprite2D" parent="."]
+position = Vector2(1800, 280)
+texture = ExtResource("2_o6hoa")
+hframes = 4
+frame = 1
+
+[node name="Yellow" type="Sprite2D" parent="."]
+position = Vector2(111, 820)
+texture = ExtResource("2_o6hoa")
+hframes = 4
+frame = 2
+
+[node name="Green" type="Sprite2D" parent="."]
+position = Vector2(1800, 820)
+texture = ExtResource("2_o6hoa")
+hframes = 4
+frame = 3
+
 [node name="P0Panel" parent="." instance=ExtResource("6_uxkvl")]
 offset_left = 52.0
-offset_top = -16.0
+offset_top = 26.0
 offset_right = 52.0
-offset_bottom = -16.0
+offset_bottom = 26.0
 scale = Vector2(0.418797, 0.41629)
 metadata/PlayerName = "P0"
 
 [node name="P1Panel" parent="." instance=ExtResource("6_uxkvl")]
 offset_left = 1744.0
-offset_top = -16.0
+offset_top = 24.0
 offset_right = 1744.0
-offset_bottom = -16.0
+offset_bottom = 24.0
 scale = Vector2(0.418797, 0.41629)
 metadata/PlayerName = "P1"
 
 [node name="P2Panel" parent="." instance=ExtResource("6_uxkvl")]
 offset_left = 52.0
-offset_top = 560.0
+offset_top = 576.0
 offset_right = 52.0
-offset_bottom = 560.0
+offset_bottom = 576.0
 scale = Vector2(0.418797, 0.41629)
 metadata/PlayerName = "P2"
 
@@ -57,36 +81,41 @@ metadata/PlayerName = "P3"
 modulate = Color(1, 0.607843, 0.380392, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 937.0
+offset_left = 849.0
 offset_top = 471.0
-offset_right = 1187.0
+offset_right = 1099.0
 offset_bottom = 778.0
 theme_override_fonts/font = ExtResource("3_38681")
 text = "3"
 label_settings = SubResource("LabelSettings_rd31c")
+horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Countdown"]
 z_index = -1
 layout_mode = 0
-offset_left = -686.0
+offset_left = -614.0
 offset_top = -485.0
-offset_right = 753.0
+offset_right = 825.0
 offset_bottom = 628.0
 color = Color(0, 0, 0, 0.533333)
 
 [node name="RedBorder" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(128, 272)
 texture = ExtResource("3_lbe8i")
 
 [node name="BlueBorder" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1808, 264)
 texture = ExtResource("4_wbuc7")
 
 [node name="GreenBorder" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1808, 832)
 texture = ExtResource("5_6lqrg")
 
 [node name="YellowBorder" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(128, 832)
 texture = ExtResource("6_kaqti")
 
