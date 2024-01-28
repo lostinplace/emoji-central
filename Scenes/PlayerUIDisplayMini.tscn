@@ -11,7 +11,7 @@ anchors_preset = 0
 script = ExtResource("1_eukfe")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0.490196)
+layout_mode = 0
 offset_left = 7.0
 offset_top = -210.0
 offset_right = 411.0
