@@ -5,23 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcbda12f-9aae-49ec-9030-72978389ae40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/libraries/GdSdk_4_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/spritesheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/spritesheet.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scenes/area_2d.tscn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scripts/garbage_spritesheet.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerArrows.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerArrows.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/bullet.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/bullet.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/JokeTypes.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/JokeTypes.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerStateMachine.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerStateMachine.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.emoji-central.dir/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/Scenes/ui.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/ui.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/JokeHopper.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/JokeHopper.gd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/bullet.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/bullet.gd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/player.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Scenes/PlayerStock.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/PlayerStock.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/PlayerUIDisplay.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/PlayerUIDisplay.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/main.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/main.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/player.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/player2.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/player2.tscn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/game.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/game.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/main.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/main.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/stock_handler.gd" beforeDir="false" />
+>>>>>>> e86a928 (compiles but doesn't work)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +47,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rebasing main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing main",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,15 +73,16 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
+>>>>>>> e86a928 (compiles but doesn't work)
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/christopherwheeler/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/christopherwheeler/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/christopherwheeler/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/christopherwheeler/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/christopherwheeler/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/christopherwheeler/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,7 +93,7 @@
       <updated>1706327615990</updated>
       <workItem from="1706327619927" duration="12000" />
       <workItem from="1706327672050" duration="64000" />
-      <workItem from="1706327794415" duration="3160000" />
+      <workItem from="1706327794415" duration="4455000" />
     </task>
     <servers />
   </component>

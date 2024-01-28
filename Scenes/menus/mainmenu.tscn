@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx6v8cufghiv7"]
+
+[ext_resource type="Script" path="res://Scripts/mainmenu.gd" id="1_raiu6"]
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_raiu6")
+
+[node name="lobby" type="Button" parent="."]
+layout_mode = 0
+offset_left = 823.0
+offset_top = 524.0
+offset_right = 1205.0
+offset_bottom = 605.0
+text = "lobby"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 859.0
+offset_top = 909.0
+offset_right = 1140.0
+offset_bottom = 986.0
+text = "quit"
+
+[connection signal="pressed" from="lobby" to="." method="_on_lobby_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

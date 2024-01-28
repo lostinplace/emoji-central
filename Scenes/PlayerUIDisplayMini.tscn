@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd31njmxjjw86"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerDisplay.gd" id="1_eukfe"]
+[ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="3_1xkv4"]
+
+[sub_resource type="Theme" id="Theme_h05o7"]
+
+[node name="Base" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eukfe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -210.0
+offset_right = 411.0
+offset_bottom = -39.0
+
+[node name="q0" type="Sprite2D" parent="."]
+position = Vector2(91.6, -119.24)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("3_1xkv4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="q1" type="Sprite2D" parent="."]
+position = Vector2(221.1, -123)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("3_1xkv4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="q2" type="Sprite2D" parent="."]
+position = Vector2(331, -123)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("3_1xkv4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
+offset_top = -228.0
+offset_right = 538.0
+offset_bottom = -6.0
+theme = SubResource("Theme_h05o7")
+
+[node name="Border1" type="ColorRect" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 13.0
+offset_top = 278.0
+offset_right = 169.0
+offset_bottom = 452.0
+color = Color(1, 1, 0.0862745, 1)
+
+[node name="Border2" type="ColorRect" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 185.0
+offset_top = 278.0
+offset_right = 345.0
+offset_bottom = 451.0
+
+[node name="Border3" type="ColorRect" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 364.0
+offset_top = 276.0
+offset_right = 518.0
+offset_bottom = 451.0
+
+[node name="Node2D" type="Node2D" parent="."]

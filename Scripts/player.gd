@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
-<<<<<<< Updated upstream
-
-const SPEED = 300.0
+@onready var singleton = get_node("/root/Singleton")
+@export var SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+@onready var arrow = $Sprite2D2
+@onready var fireDelayTimer = $fireDelay
+@export var firingDelay: float
 
 =======
 @onready var singleton = get_node("/root/Singleton")
@@ -20,27 +22,30 @@ var speedMod = 1.0 #for events dont touch this
 var weaknesses = []
 var main
 var keyboard = false
+var keyboard2 = false
 var controllerID = 0
 >>>>>>> Stashed changes
 var playerNum = 0
-var lastLooked: Vector2
+var lastLooked = Vector2(1, 0)
 var life = 70
+var ghost = false
 @onready var sprite = $Sprite2D
 @onready var animPlayer = $AnimationPlayer
 @onready var plBullet = preload("res://Scenes/bullet.tscn")
 var my_state_machine
-var psm = preload("res://Scripts/PlayerStateMachine.gd")
-var SenseOfHumor = psm.SenseOfHumor
-var my_sense_of_humor
+
 var JokeHopper = preload("res://Scripts/JokeHopper.gd").JokeHopper
 var my_joke_hopper
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var PlayerNumber
+var queue_rects: Array[Rect2]
+
+var frozen = false
 
 func _ready():
-<<<<<<< Updated upstream
-=======
 	
 	PlayerNumber = get_meta("PlayerNumber")
 	print(PlayerNumber)
@@ -73,7 +78,6 @@ func _ready():
 		weaknesses.append(main.players[i].get_category())
 	frozen = false
 	regenDelay.start(regen)
->>>>>>> Stashed changes
 
 	my_sense_of_humor = psm.get_sense_of_humor("Dark")
 	my_joke_hopper = JokeHopper.new(my_sense_of_humor.joke_distribution, 5)
@@ -82,38 +86,28 @@ var sense_of_humor
 
 func damage(dmg):
 	life -= dmg
-<<<<<<< Updated upstream
-	sprite.frame = int(80 - life/10)
-=======
 	sprite.frame = life/10 + (9 * playerNum)
 	if life > 69:
 		life = 70
 		sprite.frame = 6 + (playerNum * 9)
->>>>>>> Stashed changes
 	if life < 1:
+		if ghost == false:
+			main.player_dies(playerNum)
+		ghost = true
+		sprite.frame = 8 + (9 * playerNum)
 		return
 	if dmg > 0:
 		animPlayer.stop()
 		animPlayer.play("damage_flash")
 
+
 func _input(event):
-<<<<<<< Updated upstream
-	if event.is_action_pressed("shoot"):
-		var next_joke = my_joke_hopper.dequeue_joke()
-		
-		var bullet = plBullet.instantiate()
-		bullet.set_joketype(next_joke)
-		bullet.global_position = global_position
-		get_tree().current_scene.add_child(bullet)
-		bullet.velocity = lastLooked
-=======
 	if !frozen:
-		if event.is_action_pressed("shoot") and ghost != true and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped() and ghost != true:
+		if event.is_action_pressed("shoot2") and ghost != true and keyboard2 == true and fireDelayTimer.is_stopped() or event.is_action_pressed("shoot") and ghost != true and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped() and ghost != true:
 			var next_joke = my_joke_hopper.dequeue_joke()
 			var bullet = plBullet.instantiate()
 			fireDelayTimer.start(firingDelay)
 			bullet.set_joketype(next_joke)
-			
 			queue_rects = my_joke_hopper.get_sprite_rects()
 			var bullet_position = global_position + lastLooked * 40
 			bullet.global_position = bullet_position
@@ -129,37 +123,40 @@ func _input(event):
 						bullet.change_outline_color("ffff00")
 					elif w == 3:
 						bullet.change_outline_color("00ff00")
-					
-			bullet.velocity = lastLooked
->>>>>>> Stashed changes
+			bullet.velocity = lastLooked.normalized()
 	if event.is_action_pressed("ui_cancel"):
 		damage(10)
 
-func _physics_process(delta):
-	#movement
-	var direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
-	if direction:
-		velocity = direction * SPEED
-		lastLooked = velocity
-	else:
-		velocity= Vector2.ZERO;
-<<<<<<< Updated upstream
-	
+func _process(_delta):
+	arrow.rotation = lastLooked.angle() - deg_to_rad(90)
 
-	move_and_slide()
-=======
+func _physics_process(_delta):
+	
+	if !frozen:
+		#movement
+		var direction = Vector2.ZERO
+		velocity= Vector2.ZERO;
+		direction.x -= Input.get_joy_axis(controllerID, JOY_AXIS_LEFT_X) *-1
+		direction.y -= Input.get_joy_axis(controllerID, JOY_AXIS_LEFT_Y) *-1
+
+		if keyboard2 == true:
+			direction = Vector2(Input.get_axis("left2", "right2"), Input.get_axis("up2", "down2"))
+			direction = direction.normalized()
+
 		if keyboard == true:
 			direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
-		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
-			direction.x -= 1
-		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):
-			direction.x += 1
-		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_UP):
-			direction.y -= 1
-		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
-			direction.y += 1
+			direction = direction.normalized()
+		
+		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
+			#direction.x -= 1
+		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):
+			#direction.x += 1
+		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_UP):
+			#direction.y -= 1
+		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
+			#direction.y += 1
 		if direction:
-			velocity = direction.normalized() * SPEED * speedMod
+			velocity = direction * SPEED
 			lastLooked = direction
 
 	move_and_slide()
@@ -171,7 +168,7 @@ func _on_area_2d_body_entered(body):
 		var impacting_joke_type = body.joke.Category
 		var my_category = my_joke_hopper.my_category["category"]
 		if my_category == impacting_joke_type:
-			damage(22 * damageMod);
+			damage(10);
 		body.queue_free();
 	if body.is_in_group("alien"):
 		damage(22)
@@ -179,31 +176,62 @@ func _on_area_2d_body_entered(body):
 	 # Replace with function body.
 
 		
-#	extends Node
+	 # Replace with function body.
 
 
-## This method plays an audio stream for a specific duration from a given offset
-#func play_audio_for_duration(stream, offset_ms, duration_s):
-#	# Assuming 'audio_player' is the name of your AudioStreamPlayer node
-#	var audio_player = $audio_player
-#
-#	# Load the stream and set the start offset
-#	audio_player.stream = stream
-#	audio_player.stream_playback.seek(offset_ms * 0.001) # Convert ms to seconds
-#
-#	# Start playing the audio
-#	audio_player.play()
-#
-#	# Set a timer to stop playback after the duration
-#	yield(get_tree().create_timer(duration_s), "timeout")
-#	audio_player.stop()
-#
-#	# Example usage
-#	func _ready():
-#	var my_stream = load("res://path_to_your_mp3_file.mp3")
-#	play_audio_for_duration(my_stream, 5000, 10) # Play 10 seconds of audio starting at 5000ms
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("PowerupGroup") :
+		print(area.spriteFrame)
+		
+		var spriteFrame = area.spriteFrame;
+		area.queue_free();
+		#Heart
+		if(spriteFrame == 72):
+			#Heal some health
+			print("heal")
+			life += 10
+			if life >= 70:
+				life = 70;
+				sprite.frame = 6 + (playerNum * 9)
+			else:
+				print(life)
+				sprite.frame = life/10 + (9 * playerNum)
+			
+		
+		# ice block
+		if(spriteFrame == 73):
+			print("slip")
+			# take away control for a few seconds
+			frozen = true;
+			await get_tree().create_timer(1.5).timeout
+			frozen = false
+			
+		#shot/running
+		if(spriteFrame == 75):
+			SPEED*=1.5;
+			await get_tree().create_timer(3).timeout
+			SPEED = 300;
+			
+			
+		
+		#cheese trap
+		if(spriteFrame == 76):
+			velocity= Vector2.ZERO;
+			#Stop all movement
+			frozen = true;
+			await get_tree().create_timer(2).timeout
+			frozen = false
 
 
-func _on_regen_delay_timeout():
-	damage(-1)
->>>>>>> Stashed changes
+		
+		
+
+		#74 shield
+		#75 shot
+		#77 timer
+		#78 bandaid
+		#79 magnet
+		#80 skull
+		
+		print("hit powerup")
+

@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://biq5wjoq2vml"]
+
+[ext_resource type="Script" path="res://Scenes/menus/gameover.gd" id="1_dm00h"]
+[ext_resource type="Texture2D" uid="uid://c2g38ynghs6si" path="res://Assets/UI/Win.png" id="2_tyqj8"]
+[ext_resource type="Texture2D" uid="uid://bmic1xuqfcuk6" path="res://Assets/UI/WinPlayAgainDefault.png" id="3_n2kxi"]
+[ext_resource type="Texture2D" uid="uid://43t0ymk1kr4o" path="res://Assets/UI/WinPlayAgainPressed.png" id="4_3brr5"]
+[ext_resource type="Texture2D" uid="uid://1p1rg20mlri1" path="res://Assets/UI/WinMainMenuDefault.png" id="5_ng8tr"]
+[ext_resource type="Texture2D" uid="uid://ct0lu8n48gqvd" path="res://Assets/UI/WinMainMenuPressed.png" id="6_ipvn6"]
+[ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="7_np4mm"]
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dm00h")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 148.0
+offset_right = 1440.0
+offset_bottom = 451.0
+theme_override_font_sizes/font_size = 111
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 830.0
+offset_right = 1121.0
+offset_bottom = 912.0
+text = "MAIN MENU"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 858.0
+offset_top = 927.0
+offset_right = 1123.0
+offset_bottom = 1009.0
+text = "PLAY AGAIN"
+
+[node name="Win" type="Sprite2D" parent="."]
+position = Vector2(902.667, 508)
+scale = Vector2(1.06111, 1.06111)
+texture = ExtResource("2_tyqj8")
+
+[node name="PlayAgain" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 808.0
+offset_right = 861.0
+offset_bottom = 963.0
+texture_normal = ExtResource("3_n2kxi")
+texture_pressed = ExtResource("4_3brr5")
+
+[node name="MainMenu" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1018.0
+offset_top = 804.0
+offset_right = 1632.0
+offset_bottom = 959.0
+texture_normal = ExtResource("5_ng8tr")
+texture_pressed = ExtResource("6_ipvn6")
+
+[node name="Winner" type="Sprite2D" parent="."]
+position = Vector2(882, 405)
+scale = Vector2(3, 3)
+texture = ExtResource("7_np4mm")
+hframes = 9
+vframes = 4
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

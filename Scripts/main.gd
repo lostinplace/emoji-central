@@ -1,11 +1,10 @@
 extends Node
 
-@onready var plPlayer = preload("res://Scenes/player.tscn")
+@onready var Player = preload("res://Scenes/player.tscn")
 @onready var singleton = get_node("/root/Singleton")
 @onready var cloudTimer = $Timer
 @onready var plCloud = preload("res://Scenes/cloud.tscn")
 @onready var winScreen = preload("res://Scenes/menus/gameover.tscn")
-@onready var tilemap = $wallTiles
 
 var playersAlive = []
 var players: Array
@@ -13,7 +12,7 @@ var players: Array
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in singleton.playerCount:
-		var player = plPlayer.instantiate()
+		var player = Player.instantiate()
 		player.playerNum = i
 		playersAlive.append(i)
 		player.main = self
@@ -28,13 +27,12 @@ func _ready():
 
 func player_dies(player):
 	playersAlive.erase(player)
-	tilemap.animPlayer.play("player_eliminated")
 	if playersAlive.size() == 1:
 		singleton.winner = playersAlive.front()
 		get_tree().change_scene_to_packed(winScreen)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
-func _process(delta):
+func _process(_delta):
 	for i in players.size():
 		var this_player = players[i]
 		var player_rects = this_player.queue_rects

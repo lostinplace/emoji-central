@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwotayg5o1mws"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerDisplay.gd" id="1_2q6s5"]
+[ext_resource type="FontFile" uid="uid://c8axnpxc0nrk4" path="res://addons/gut/fonts/AnonymousPro-Bold.ttf" id="1_pyqx4"]
+[ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="3_w0848"]
+
+[sub_resource type="Theme" id="Theme_h05o7"]
+
+[sub_resource type="Theme" id="Theme_4duir"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tjvhj"]
+font = ExtResource("1_pyqx4")
+font_size = 75
+outline_size = 2
+
+[node name="Base" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2q6s5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 44.0
+offset_right = 418.0
+offset_bottom = 1252.0
+theme = SubResource("Theme_h05o7")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 12.0
+offset_right = 200.0
+offset_bottom = 88.0
+scale = Vector2(4.09323, 3.67104)
+theme = SubResource("Theme_4duir")
+text = "P1"
+label_settings = SubResource("LabelSettings_tjvhj")
+horizontal_alignment = 2
+
+[node name="Border1" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 278.0
+offset_right = 169.0
+offset_bottom = 452.0
+color = Color(1, 1, 0.0862745, 1)
+
+[node name="Border2" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 278.0
+offset_right = 345.0
+offset_bottom = 451.0
+
+[node name="Border3" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 276.0
+offset_right = 518.0
+offset_bottom = 451.0
+
+[node name="q0" type="Sprite2D" parent="Panel"]
+position = Vector2(91.5, 367.16)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("3_w0848")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="q1" type="Sprite2D" parent="Panel"]
+position = Vector2(268, 367)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("3_w0848")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="q2" type="Sprite2D" parent="Panel"]
+position = Vector2(439, 362)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("3_w0848")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Border4" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 688.0
+offset_right = 396.0
+offset_bottom = 1004.0
+color = Color(1, 0, 0, 1)
+
+[node name="vulnerable" type="Sprite2D" parent="Panel"]
+position = Vector2(246, 852.188)
+scale = Vector2(3.78125, 3.71286)
+texture = ExtResource("3_w0848")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
