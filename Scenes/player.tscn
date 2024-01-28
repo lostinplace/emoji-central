@@ -58,10 +58,8 @@ libraries = {
 }
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1, -1)
-scale = Vector2(1.02739, 0.977525)
 texture = ExtResource("3_x4shv")
-offset = Vector2(-2, 37)
+offset = Vector2(-2, 45)
 vframes = 4
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -75,6 +73,5 @@ shape = SubResource("CircleShape2D_hafrt")
 [node name="fireDelay" type="Timer" parent="."]
 one_shot = true
 
-[node name="audio_player" type="AudioStreamPlayer2D" parent="."]
-
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

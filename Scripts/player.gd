@@ -17,6 +17,7 @@ var ghost = false
 @onready var sprite = $Sprite2D
 @onready var animPlayer = $AnimationPlayer
 @onready var plBullet = preload("res://Scenes/bullet.tscn")
+var my_state_machine
 
 var JokeHopper = preload("res://Scripts/JokeHopper.gd").JokeHopper
 var my_joke_hopper
@@ -59,8 +60,6 @@ func _ready():
 	await get_tree().create_timer(3).timeout
 	frozen = false
 
-func get_category():
-	return my_joke_hopper.my_category["category"]
 
 func damage(dmg):
 	life -= dmg
@@ -73,7 +72,6 @@ func damage(dmg):
 		return
 	animPlayer.stop()
 	animPlayer.play("damage_flash")
-	play_audio_for_duration(my_stream, 490.0, 1400.0)
 
 
 func _input(event):
@@ -115,9 +113,8 @@ func _physics_process(delta):
 			velocity = direction.normalized() * SPEED
 			lastLooked = direction
 
-	move_and_slide() 
- 
-var my_stream = load("res://Assets/Sounds/cartoon-laugh-6457.mp3")
+	move_and_slide()
+
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("BulletsGroup") :
@@ -126,29 +123,65 @@ func _on_area_2d_body_entered(body):
 		var my_category = my_joke_hopper.my_category["category"]
 		if my_category == impacting_joke_type:
 			damage(10);
-			play_audio_for_duration(my_stream, 490.0, 1400.0)
 		body.queue_free();
+
+		
 	 # Replace with function body.
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("PowerupGroup") :
+		print(area.spriteFrame)
+		
+		var spriteFrame = area.spriteFrame;
+		
+		#Heart
+		if(spriteFrame == 72):
+			#Heal some health
+			print("heal")
+			life += 10
+			if life >= 70:
+				life = 70;
+				sprite.frame = 6 + (playerNum * 9)
+			else:
+				print(life)
+				sprite.frame = life/10 + (9 * playerNum)
+			
+		
+		# ice block
+		if(spriteFrame == 73):
+			print("slip")
+			# take away control for a few seconds
+			frozen = true;
+			await get_tree().create_timer(1.5).timeout
+			frozen = false
+			
+		#shot/running
+		if(spriteFrame == 75):
+			SPEED*=1.5;
+			await get_tree().create_timer(3).timeout
+			SPEED = 300;
+			
+			
+		
+		#cheese trap
+		if(spriteFrame == 76):
+			velocity= Vector2.ZERO;
+			#Stop all movement
+			frozen = true;
+			await get_tree().create_timer(2).timeout
+			frozen = false
+
+
+		
 		
 
-# This method plays an audio stream for a specific duration from a given offset
-func play_audio_for_duration(stream, offset_ms: float, duration_s):
-	# Assuming 'audio_player' is the name of your AudioStreamPlayer node
-	var audio_player = $audio_player
+		#74 shield
+		#75 shot
+		#77 timer
+		#78 bandaid
+		#79 magnet
+		#80 skull
+		
+		print("hit powerup")
 
-	# Load the stream and set the start offset
-	audio_player.stream = stream
-	#var sp = audio_player.play()
-	#sp.seek(offset_ms * 0.001) # Convert ms to seconds
-
-	# Start playing the audio
-	audio_player.play(offset_ms * 0.001)
-
-	# Set a timer to stop playback after the duration
-	await get_tree().create_timer(duration_s * 0.001).timeout
-	audio_player.stop()
-
-	# Example usage
-
-#var my_stream = load("res://path_to_your_mp3_file.mp3")
-#play_audio_for_duration(my_stream, 5000, 10) # Play 10 seconds of audio starting at 5000ms
