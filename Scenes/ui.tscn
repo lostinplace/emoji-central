@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcedcmr16n458"]
+[gd_scene load_steps=14 format=3 uid="uid://dcedcmr16n458"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_7nm6v"]
 [ext_resource type="Texture2D" uid="uid://y1o25ocivpg0" path="res://Assets/UI/HUDBackgrounds.png" id="2_o6hoa"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/LevelMusic.gd" id="8_6b12f"]
 [ext_resource type="AudioStream" uid="uid://bkcxrqrsf8s4p" path="res://Assets/Sounds/music/Emoji Central_Phase2.mp3" id="8_cspd2"]
 [ext_resource type="AudioStream" uid="uid://dvyn6sbh4d8ab" path="res://Assets/Sounds/fx/Count down_v1.wav" id="9_vyg0l"]
+[ext_resource type="AudioStream" uid="uid://c4p0mgj2b5oso" path="res://Assets/Sounds/fx/Game Start_v1.wav" id="12_lohn8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rd31c"]
 font_size = 200
@@ -125,3 +126,6 @@ script = ExtResource("8_6b12f")
 
 [node name="CountdownA" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_vyg0l")
+
+[node name="MatchStart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_lohn8")
