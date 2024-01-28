@@ -15,11 +15,17 @@ func _ready():
 	var rand = RandomNumberGenerator.new()
 	
 	var randomNumber = rand.randi_range(72,81)
-	#spriteFrame = randomNumber;
-	#powerupSprite.frame = randomNumber;
+	spriteFrame = randomNumber;
+	powerupSprite.frame = randomNumber;
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_timer_timeout():
+	# powerups dissappear after 5 seconds
+	queue_free()
+	pass # Replace with function body.

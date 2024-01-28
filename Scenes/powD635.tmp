@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://570ctw73fccu"]
+
+[ext_resource type="Script" path="res://PowerupSpawner.gd" id="1_ohqea"]
+
+[node name="PowerupSpawner" type="Timer"]
+wait_time = 5.0
+script = ExtResource("1_ohqea")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

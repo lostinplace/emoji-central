@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://570ctw73fccu"]
+
+[ext_resource type="Script" path="res://Scenes/powerup_spawner.gd" id="1_efllv"]
+
+[node name="PowerupSpawner" type="Node"]
+script = ExtResource("1_efllv")
+
+[node name="PowerupSpawnerTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="PowerupSpawnerTimer" to="PowerupSpawnerTimer" method="_on_timeout"]
+[connection signal="timeout" from="PowerupSpawnerTimer" to="." method="_on_powerup_spawner_timer_timeout"]
