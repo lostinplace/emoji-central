@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_c47p8"]
 [ext_resource type="Texture2D" uid="uid://0wua8q5ti6fd" path="res://Assets/UI/CowboyHatCombined.png" id="3_b4xd8"]
 [ext_resource type="Texture2D" uid="uid://dkkvn0x447av6" path="res://Assets/PlayerArrows.png" id="3_x4shv"]
-[ext_resource type="PackedScene" uid="uid://dd31njmxjjw86" path="res://Scenes/PlayerUIDisplayMini.tscn" id="4_x5t8j"]
+[ext_resource type="PackedScene" path="res://Scenes/PlayerUIDisplayMini.tscn" id="4_x5t8j"]
 [ext_resource type="AudioStream" uid="uid://4thi64npfu3e" path="res://Assets/Sounds/fx/Fruit_v1.wav" id="5_rh4ke"]
 [ext_resource type="AudioStream" uid="uid://cm7gldl53yu32" path="res://Assets/Sounds/fx/Pickup UI_v1.wav" id="6_o4w6q"]
 [ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="8_bfyeu"]

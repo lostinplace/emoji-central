@@ -14,7 +14,7 @@ var decel = 0.2
 var damageMod = 1.0 #for events dont touch this
 var speedMod = 1.0 #for events dont touch this
 
-@export var regen = 1.5 #amount of time (seconds) it takes to regenerate 1 hp
+@export var regen = 3 #amount of time (seconds) it takes to regenerate 1 hp
 var weaknesses = []
 var main
 var keyboard = false
@@ -98,7 +98,7 @@ func set_jokehopper(category_name: String):
 
 func damage(dmg):
 	life -= dmg
-	sprite.frame = life/10 + (9 * playerNum) - 1
+	sprite.frame = life/10 + (9 * playerNum)
 	if life > 69:
 		life = 70
 		sprite.frame = 6 + (playerNum * 9)
