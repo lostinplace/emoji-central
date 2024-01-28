@@ -51,6 +51,7 @@ scale = Vector2(0.418797, 0.41629)
 metadata/PlayerName = "P3"
 
 [node name="Countdown" type="Label" parent="."]
+modulate = Color(1, 0.607843, 0.380392, 1)
 z_index = 1
 layout_mode = 0
 offset_left = 937.0
