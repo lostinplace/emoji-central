@@ -7,14 +7,7 @@ const JUMP_VELOCITY = -400.0
 @onready var fireDelayTimer = $fireDelay
 @export var firingDelay: float
 
-=======
-@onready var singleton = get_node("/root/Singleton")
-@export var SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-@onready var arrow = $Sprite2D2
-@onready var fireDelayTimer = $fireDelay
 @onready var regenDelay = $regenDelay
-@export var firingDelay: float
 var damageMod = 1.0 #for events dont touch this
 var speedMod = 1.0 #for events dont touch this
 
@@ -24,7 +17,7 @@ var main
 var keyboard = false
 var keyboard2 = false
 var controllerID = 0
->>>>>>> Stashed changes
+
 var playerNum = 0
 var lastLooked = Vector2(1, 0)
 var life = 70
@@ -79,10 +72,10 @@ func _ready():
 	frozen = false
 	regenDelay.start(regen)
 
-	my_sense_of_humor = psm.get_sense_of_humor("Dark")
-	my_joke_hopper = JokeHopper.new(my_sense_of_humor.joke_distribution, 5)
-
 var sense_of_humor
+
+func get_category():
+	return my_joke_hopper.my_category["category"]
 
 func damage(dmg):
 	life -= dmg

@@ -1,4 +1,4 @@
-gd_scene load_steps=4 format=3 uid="uid://bmmi5oa7mixlj"]
+[gd_scene load_steps=4 format=3 uid="uid://bmmi5oa7mixlj"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_v5e6l"]
 [ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="2_h0eu6"]
@@ -9,6 +9,13 @@ gd_scene load_steps=4 format=3 uid="uid://bmmi5oa7mixlj"]
 collision_mask = 4
 gravity_scale = 0.0
 script = ExtResource("1_v5e6l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+self_modulate = Color(100, 100, 100, 1)
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("2_h0eu6")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.6, 1.6)
