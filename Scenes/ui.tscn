@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcedcmr16n458"]
+[gd_scene load_steps=8 format=3 uid="uid://dcedcmr16n458"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_7nm6v"]
+[ext_resource type="Texture2D" uid="uid://c0pf1fwwyjudn" path="res://Assets/red_border.png" id="3_lbe8i"]
+[ext_resource type="Texture2D" uid="uid://cu36ka43xer6k" path="res://Assets/blue_border.png" id="4_wbuc7"]
+[ext_resource type="Texture2D" uid="uid://cubbdcv3occxs" path="res://Assets/green_border.png" id="5_6lqrg"]
+[ext_resource type="Texture2D" uid="uid://7fsn7y02mvp4" path="res://Assets/yellow_border.png" id="6_kaqti"]
 [ext_resource type="PackedScene" uid="uid://dwotayg5o1mws" path="res://Scenes/PlayerUIDisplay.tscn" id="6_uxkvl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rd31c"]
@@ -63,3 +67,19 @@ offset_top = -375.0
 offset_right = 779.0
 offset_bottom = 738.0
 color = Color(0, 0, 0, 0.533333)
+
+[node name="RedBorder" type="Sprite2D" parent="."]
+position = Vector2(128, 272)
+texture = ExtResource("3_lbe8i")
+
+[node name="BlueBorder" type="Sprite2D" parent="."]
+position = Vector2(1808, 264)
+texture = ExtResource("4_wbuc7")
+
+[node name="GreenBorder" type="Sprite2D" parent="."]
+position = Vector2(1808, 832)
+texture = ExtResource("5_6lqrg")
+
+[node name="YellowBorder" type="Sprite2D" parent="."]
+position = Vector2(128, 832)
+texture = ExtResource("6_kaqti")
