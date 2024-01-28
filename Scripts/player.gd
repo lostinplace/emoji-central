@@ -38,6 +38,7 @@ var queue_rects: Array[Rect2]
 
 var frozen = false
 
+
 func _ready():
 	
 	PlayerNumber = get_meta("PlayerNumber")
@@ -210,11 +211,17 @@ func _on_area_2d_area_entered(area):
 			await get_tree().create_timer(1.5).timeout
 			frozen = false
 			
-		#shot/running
-		if(spriteFrame == 75):
+		#car
+		if(spriteFrame == 79):
 			SPEED*=1.5;
 			await get_tree().create_timer(3).timeout
 			SPEED = 300;
+			
+#Watergun
+		if(spriteFrame == 75):
+			fireDelayTimer.wait_time = 0.1;
+			await get_tree().create_timer(3).timeout
+			fireDelayTimer.wait_time = 1;
 			
 			
 		
@@ -230,12 +237,7 @@ func _on_area_2d_area_entered(area):
 		
 		
 
-		#74 shield
-		#75 shot
-		#77 timer
-		#78 bandaid
-		#79 magnet
-		#80 skull
+
 		
 		print("hit powerup")
 
