@@ -120,16 +120,13 @@ func _input(event):
 		if event.is_action_pressed("shoot2") and ghost != true and keyboard2 == true and fireDelayTimer.is_stopped() or event.is_action_pressed("shoot") and ghost != true and keyboard == true and fireDelayTimer.is_stopped() or Input.is_joy_button_pressed(controllerID, JOY_BUTTON_A) and fireDelayTimer.is_stopped() and ghost != true:
 			var next_joke = my_joke_hopper.dequeue_joke()
 			var bullet = plBullet.instantiate()
-			var weakness_color = main.weakness_colors.get(next_joke.Category)
-
-			
 			fireDelayTimer.start(firingDelay)
 			bullet.set_joketype(next_joke)
 			queue_rects = my_joke_hopper.get_sprite_rects()
-			var bullet_position = global_position + lastLooked * 55
+			var bullet_position = global_position + lastLooked * 40
 			bullet.global_position = bullet_position
-			if weakness_color != null:
-				bullet.change_outline_color(weakness_color)
+			
+			
 			get_tree().current_scene.add_child(bullet)
 			bullet.velocity = lastLooked.normalized()
 			update_next_joke_icon()
@@ -192,7 +189,7 @@ func _on_area_2d_body_entered(body):
 		var impacting_joke_type = body.joke.Category
 		var my_category = my_joke_hopper.my_category["category"]
 		if my_category == impacting_joke_type:
-			damage(20 * damageMod);
+			damage(10 * damageMod);
 		else:
 			$SplatAudio.play()
 		body.queue_free();
