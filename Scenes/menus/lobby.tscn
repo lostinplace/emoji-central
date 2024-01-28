@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1dces6a8l4u0"]
+[gd_scene load_steps=10 format=3 uid="uid://c1dces6a8l4u0"]
 
 [ext_resource type="Script" path="res://Scripts/lobby.gd" id="1_0irkq"]
 [ext_resource type="Texture2D" uid="uid://drhpkpvvovhpt" path="res://Assets/UI/LoadingBackGround.png" id="2_fayri"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bwhdnpdojmm37" path="res://Assets/UI/startButton_Normal.png" id="4_txupg"]
 [ext_resource type="Texture2D" uid="uid://d2wqckdnea1s6" path="res://Assets/UI/startButton_Pressed.png" id="5_wvb3x"]
 [ext_resource type="Texture2D" uid="uid://dhxquccva1mpx" path="res://Assets/UI/startButton_Disabled.png" id="6_ef4sx"]
+[ext_resource type="AudioStream" uid="uid://bvde8qoewg07p" path="res://Assets/Sounds/music/Emoji Central_Phase1_Version3.mp3" id="8_sh7iu"]
+[ext_resource type="AudioStream" uid="uid://cgwgkvjkbx0xa" path="res://Assets/Sounds/fx/Main Menu UI_v1.wav" id="9_dnscf"]
 
 [node name="lobby" type="Control"]
 layout_mode = 3
@@ -65,5 +67,12 @@ offset_bottom = 1007.0
 texture_normal = ExtResource("4_txupg")
 texture_pressed = ExtResource("5_wvb3x")
 texture_disabled = ExtResource("6_ef4sx")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_sh7iu")
+autoplay = true
+
+[node name="PlayerStart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_dnscf")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_button_pressed"]

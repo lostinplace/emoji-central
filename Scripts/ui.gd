@@ -8,12 +8,17 @@ var Player1_Sprites: Array[Sprite2D]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	countdownText.text=("3")
+	$CountdownA.play()
 	await get_tree().create_timer(1).timeout
 	countdownText.text=("two")
+	$CountdownA.play()
 	await get_tree().create_timer(1).timeout
 	countdownText.text=("1")
+	$CountdownA.play()
 	await get_tree().create_timer(1).timeout
 	countdownText.visible = false;
+	
+	$Music.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
