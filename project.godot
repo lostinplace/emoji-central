@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Emojis"
+config/name="Cackle Royale"
 run/main_scene="res://Scenes/menus/lobby.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

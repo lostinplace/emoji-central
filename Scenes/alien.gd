@@ -18,7 +18,7 @@ func _physics_process(delta):
 	else:
 		global_position.x -= speed
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if global_position.x > 1600:
 		left = false
 	if global_position.x < 350:

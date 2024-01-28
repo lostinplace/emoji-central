@@ -13,7 +13,7 @@ var spriteFrame = 75;
 func _ready():
 	$AnimationPlayer.play("pulse")
 	spriteFrame = powerupSprite.frame;
-	var rand = RandomNumberGenerator.new()
+	#var rand = RandomNumberGenerator.new()
 	var possiblePowerups = [72,73,79,75,76,78];
 	possiblePowerups.shuffle();
 	var randomNumber = possiblePowerups[0]
