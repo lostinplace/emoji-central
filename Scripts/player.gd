@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 @onready var arrow = $Sprite2D2
 @onready var fireDelayTimer = $fireDelay
 @export var firingDelay: float
-@onready var nextShotRect = $ColorRect
+@onready var nextShotRect = $ThinkBubble
 @onready var nextShotIcon = $q0
 
 @onready var regenDelay = $regenDelay
