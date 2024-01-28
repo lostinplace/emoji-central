@@ -104,6 +104,8 @@ func damage(dmg):
 		sprite.frame = 6 + (playerNum * 9)
 	if life < 1:
 		if ghost == false:
+			nextShotIcon.visible = false
+			nextShotRect.visible = false
 			main.player_dies(playerNum)
 		ghost = true
 		sprite.frame = 8 + (9 * playerNum)
