@@ -45,4 +45,8 @@ autostart = true
 
 [node name="PowerupSpawner" parent="." instance=ExtResource("6_x4o4y")]
 
+<<<<<<< Updated upstream
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+=======
+[editable path="wallTiles"]
+>>>>>>> Stashed changes

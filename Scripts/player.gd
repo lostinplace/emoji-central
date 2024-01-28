@@ -62,11 +62,21 @@ func _ready():
 	
 	await get_tree().create_timer(3).timeout
 	frozen = false
+<<<<<<< Updated upstream
+=======
+	regenDelay.start(regen)
+>>>>>>> Stashed changes
 
 
 func damage(dmg):
 	life -= dmg
 	sprite.frame = life/10 + (9 * playerNum)
+<<<<<<< Updated upstream
+=======
+	if life > 69:
+		life = 70
+		sprite.frame = 6 + (playerNum * 9)
+>>>>>>> Stashed changes
 	if life < 1:
 		if ghost == false:
 			main.player_dies(playerNum)
@@ -89,6 +99,7 @@ func _input(event):
 			bullet.global_position = bullet_position
 			
 			get_tree().current_scene.add_child(bullet)
+<<<<<<< Updated upstream
 			bullet.velocity = lastLooked.normalized()
 	if event.is_action_pressed("ui_cancel"):
 		damage(10)
@@ -109,6 +120,31 @@ func _physics_process(delta):
 			direction = Vector2(Input.get_axis("left2", "right2"), Input.get_axis("up2", "down2"))
 			direction = direction.normalized()
 
+=======
+			for w in weaknesses.size():
+				if weaknesses[w] == next_joke.Category:
+					if w == 0:
+						bullet.change_outline_color("ff0000")
+					elif w == 1:
+						bullet.change_outline_color("0000ff")
+					elif w == 2:
+						bullet.change_outline_color("ffff00")
+					elif w == 3:
+						bullet.change_outline_color("00ff00")
+					
+			bullet.velocity = lastLooked
+	if event.is_action_pressed("ui_cancel"):
+		damage(10)
+
+func _physics_process(delta):
+	#movement
+	var direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+	if direction:
+		velocity = direction * SPEED
+		lastLooked = velocity
+	else:
+		velocity= Vector2.ZERO;
+>>>>>>> Stashed changes
 		if keyboard == true:
 			direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 			direction = direction.normalized()
@@ -185,6 +221,7 @@ func _on_area_2d_area_entered(area):
 			frozen = false
 
 
+<<<<<<< Updated upstream
 		
 		
 
@@ -197,3 +234,7 @@ func _on_area_2d_area_entered(area):
 		
 		print("hit powerup")
 
+=======
+func _on_regen_delay_timeout():
+	damage(-1)
+>>>>>>> Stashed changes

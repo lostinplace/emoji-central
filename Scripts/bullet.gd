@@ -1,7 +1,13 @@
 extends RigidBody2D
 
 var velocity
+<<<<<<< Updated upstream
 var speed = 10
+=======
+var speed = 8
+@onready var sprite = $Sprite2D
+@onready var outline = $Sprite2D2
+>>>>>>> Stashed changes
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,6 +18,12 @@ var bs = preload("res://Scripts/bullet_spritesheet.gd")
 func _process(delta):
 	pass
 
+<<<<<<< Updated upstream
+=======
+func change_outline_color(color):
+	outline.modulate = color
+
+>>>>>>> Stashed changes
 var bounceCount = 0
 const maxBounces = 4
 var joke
