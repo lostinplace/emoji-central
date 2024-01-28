@@ -17,7 +17,7 @@ func _process(_delta):
 	pass
 
 func change_outline_color(color):
-	outline.modulate = color
+	$Sprite2D2.modulate = color
 	#outline.scale = Vector2(1.5, 1.5)
 	
 var bounceCount = 0
