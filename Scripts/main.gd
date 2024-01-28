@@ -8,9 +8,12 @@ extends Node
 
 var playersAlive = []
 var players: Array
+var bs = preload("res://Scripts/bullet_spritesheet.gd")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var random_cat_names = bs.get_random_category_names()
 	for i in singleton.playerCount:
 		var player = Player.instantiate()
 		player.playerNum = i
@@ -18,11 +21,11 @@ func _ready():
 		player.main = self
 		player.global_position = Vector2(randi_range(500, 1000), randi_range(100,700))
 		add_child(player)
+		player.set_jokehopper(random_cat_names[i])
 		players.append(player)
-		var jh = player.JokeHopper
-		
-		var player_category = player.my_joke_hopper.my_category
-		$UI.set_player_vulnerability(i, player_category.category)
+				
+		var player_category = player.get_category()
+		$UI.set_player_vulnerability(i, player_category)
 		
 
 func player_dies(player):
