@@ -60,7 +60,8 @@ func _ready():
 		PlayerNumber = get_meta("PlayerNumber")
 		print(PlayerNumber)
 	
-	var tmp_category = preload("res://Scripts/bullet_spritesheet.gd").get_random_category()
+	var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
+	var tmp_category = spritesheet.get_unused_category()
 	var tmp_cat_name = tmp_category.category
 	my_joke_hopper = JokeHopper.new(tmp_cat_name, 5)
 	queue_rects = my_joke_hopper.get_sprite_rects()
