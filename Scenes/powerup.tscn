@@ -1,16 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr28y3hj8157x"]
+[gd_scene load_steps=7 format=3 uid="uid://dr28y3hj8157x"]
 
 [ext_resource type="Script" path="res://Scenes/powerup.gd" id="1_1x477"]
 [ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="1_xdhrf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wbvr"]
 
+[sub_resource type="Animation" id="Animation_sbvs1"]
+resource_name = "pulse"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PowerupSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.25, 1.25), Vector2(1.75, 1.75)]
+}
+
+[sub_resource type="Animation" id="Animation_sfc87"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PowerupSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ro54"]
+_data = {
+"RESET": SubResource("Animation_sfc87"),
+"pulse": SubResource("Animation_sbvs1")
+}
+
 [node name="Powerup" type="Area2D" groups=["PowerupGroup"]]
 script = ExtResource("1_1x477")
 
 [node name="PowerupSprite" type="Sprite2D" parent="."]
+position = Vector2(-17, 16)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_xdhrf")
+offset = Vector2(9.12476, -8.58801)
 hframes = 9
 vframes = 9
 frame = 72
@@ -23,5 +63,10 @@ shape = SubResource("CircleShape2D_5wbvr")
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7ro54")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

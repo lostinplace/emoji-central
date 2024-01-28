@@ -260,3 +260,7 @@ func _on_area_2d_area_entered(area):
 
 		print("hit powerup")
 
+
+
+func _on_regen_delay_timeout():
+	damage(-1)

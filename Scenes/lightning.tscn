@@ -212,7 +212,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oas6r"]
-radius = 75.0267
+radius = 97.0052
 
 [node name="lightning" type="Area2D"]
 modulate = Color(1, 1, 1, 0.666667)
@@ -249,6 +249,7 @@ texture = ExtResource("4_vxibu")
 
 [node name="Thunder" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_3ymi0")
+volume_db = -0.59
 autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
