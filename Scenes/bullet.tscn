@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://clomgv3x2d71p" path="res://Assets/Bullets.png" id="2_h0eu6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2qlgt"]
+radius = 12.8125
 
 [node name="Bullet" type="RigidBody2D" groups=["BulletsGroup"]]
+scale = Vector2(2, 2)
 collision_mask = 4
 gravity_scale = 0.0
 script = ExtResource("1_v5e6l")

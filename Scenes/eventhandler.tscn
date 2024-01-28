@@ -2,21 +2,6 @@
 
 [ext_resource type="Script" path="res://Scenes/eventhandler.gd" id="1_eb2o3"]
 
-[sub_resource type="Animation" id="Animation_nflpm"]
-resource_name = "timer_drop"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(3.73214, 1),
-"update": 0,
-"values": [Vector2(824, -86), Vector2(824, -2)]
-}
-
 [sub_resource type="Animation" id="Animation_n8e1b"]
 length = 0.001
 tracks/0/type = "value"
@@ -44,21 +29,6 @@ tracks/1/keys = {
 "values": [Vector2(205, 1071)]
 }
 
-[sub_resource type="Animation" id="Animation_wvqr7"]
-resource_name = "timer_hide"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(3.73213, 1),
-"update": 0,
-"values": [Vector2(824, -2), Vector2(824, -86)]
-}
-
 [sub_resource type="Animation" id="Animation_o4llp"]
 resource_name = "event"
 length = 2.0
@@ -73,6 +43,36 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(2.63902, 0.659754, 2.2974, 1),
 "update": 0,
 "values": [Vector2(205, 1071), Vector2(205, 415), Vector2(205, 359), Vector2(205, -200)]
+}
+
+[sub_resource type="Animation" id="Animation_nflpm"]
+resource_name = "timer_drop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.73214, 1),
+"update": 0,
+"values": [Vector2(824, -86), Vector2(824, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_wvqr7"]
+resource_name = "timer_hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.73213, 1),
+"update": 0,
+"values": [Vector2(824, -2), Vector2(824, -86)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wennn"]

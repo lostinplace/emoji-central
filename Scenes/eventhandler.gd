@@ -59,9 +59,9 @@ func _on_timer_timeout():
 			aliens()
 		elif events.front() == "blackout":
 			blackout.visible = true
+			progressBar.max_value = 6
+			timer.start(20)
 		progressBar.max_value = 20
-		timer.start(6)
-		progressBar.max_value = 6
 		animPlayer.play("event")
 		state = 2
 		
