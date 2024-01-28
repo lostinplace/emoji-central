@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -400.0
 @export var firingDelay: float
 @onready var nextShotRect = $ThinkBubble
 @onready var nextShotIcon = $q0
+var decel = 0.2
 
 @onready var regenDelay = $regenDelay
 var damageMod = 1.0 #for events dont touch this
@@ -110,8 +111,8 @@ func damage(dmg):
 	if dmg > 0:
 		animPlayer.stop()
 		animPlayer.play("damage_flash")
-	var st = get_tree()
-	audio_tools.play_audio_for_duration(st, $DamageAudio, 0, 500)
+		var st = get_tree()
+		audio_tools.play_audio_for_duration(st, $DamageAudio, 0, 500)
 	
 func _input(event):
 	if !frozen:
@@ -156,7 +157,7 @@ func _physics_process(_delta):
 	if !frozen:
 		#movement
 		var direction = Vector2.ZERO
-		velocity= Vector2.ZERO;
+		velocity= lerp(velocity, Vector2.ZERO, decel)
 		direction.x -= Input.get_joy_axis(controllerID, JOY_AXIS_LEFT_X) *-1
 		direction.y -= Input.get_joy_axis(controllerID, JOY_AXIS_LEFT_Y) *-1
 
