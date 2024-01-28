@@ -115,8 +115,8 @@ offset_bottom = -41.0
 color = Color(1, 1, 1, 0.529412)
 
 [node name="q0" type="Sprite2D" parent="ColorRect"]
-position = Vector2(259.5, 1011.16)
-scale = Vector2(2.3, 2.3)
+position = Vector2(19, 20)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_bfyeu")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
