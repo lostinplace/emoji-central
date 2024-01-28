@@ -73,6 +73,7 @@ func damage(dmg):
 		return
 	animPlayer.stop()
 	animPlayer.play("damage_flash")
+	play_audio_for_duration(my_stream, 490.0, 1400.0)
 
 
 func _input(event):
@@ -114,8 +115,9 @@ func _physics_process(delta):
 			velocity = direction.normalized() * SPEED
 			lastLooked = direction
 
-	move_and_slide()
-
+	move_and_slide() 
+ 
+var my_stream = load("res://Assets/Sounds/cartoon-laugh-6457.mp3")
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("BulletsGroup") :
@@ -124,27 +126,29 @@ func _on_area_2d_body_entered(body):
 		var my_category = my_joke_hopper.my_category["category"]
 		if my_category == impacting_joke_type:
 			damage(10);
+			play_audio_for_duration(my_stream, 490.0, 1400.0)
 		body.queue_free();
 	 # Replace with function body.
+		
 
+# This method plays an audio stream for a specific duration from a given offset
+func play_audio_for_duration(stream, offset_ms: float, duration_s):
+	# Assuming 'audio_player' is the name of your AudioStreamPlayer node
+	var audio_player = $audio_player
 
-## This method plays an audio stream for a specific duration from a given offset
-#func play_audio_for_duration(stream, offset_ms, duration_s):
-#	# Assuming 'audio_player' is the name of your AudioStreamPlayer node
-#	var audio_player = $audio_player
-#
-#	# Load the stream and set the start offset
-#	audio_player.stream = stream
-#	audio_player.stream_playback.seek(offset_ms * 0.001) # Convert ms to seconds
-#
-#	# Start playing the audio
-#	audio_player.play()
-#
-#	# Set a timer to stop playback after the duration
-#	yield(get_tree().create_timer(duration_s), "timeout")
-#	audio_player.stop()
-#
-#	# Example usage
-#	func _ready():
-#	var my_stream = load("res://path_to_your_mp3_file.mp3")
-#	play_audio_for_duration(my_stream, 5000, 10) # Play 10 seconds of audio starting at 5000ms
+	# Load the stream and set the start offset
+	audio_player.stream = stream
+	#var sp = audio_player.play()
+	#sp.seek(offset_ms * 0.001) # Convert ms to seconds
+
+	# Start playing the audio
+	audio_player.play(offset_ms * 0.001)
+
+	# Set a timer to stop playback after the duration
+	await get_tree().create_timer(duration_s * 0.001).timeout
+	audio_player.stop()
+
+	# Example usage
+
+#var my_stream = load("res://path_to_your_mp3_file.mp3")
+#play_audio_for_duration(my_stream, 5000, 10) # Play 10 seconds of audio starting at 5000ms
