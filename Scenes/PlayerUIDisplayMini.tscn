@@ -73,3 +73,17 @@ offset_right = 518.0
 offset_bottom = 451.0
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="q3" type="Sprite2D" parent="."]
+position = Vector2(331, -123)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("3_1xkv4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="q4" type="Sprite2D" parent="."]
+position = Vector2(331, -123)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("3_1xkv4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
