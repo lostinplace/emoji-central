@@ -26,7 +26,7 @@ func _ready():
 		player.playerNum = i
 		playersAlive.append(i)
 		player.main = self
-		player.global_position = Vector2(randi_range(500, 1000), randi_range(100,700))
+		player.global_position = Vector2(randi_range(500, 1800), randi_range(100,950))
 		add_child(player)
 		player.set_jokehopper(random_cat_names[i])
 		players.append(player)
