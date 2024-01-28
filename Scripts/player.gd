@@ -175,6 +175,8 @@ func _on_area_2d_body_entered(body):
 		var my_category = my_joke_hopper.my_category["category"]
 		if my_category == impacting_joke_type:
 			damage(10);
+		else:
+			$SplatAudio.play()
 		body.queue_free();
 	if body.is_in_group("alien"):
 		damage(22)
@@ -233,12 +235,7 @@ func _on_area_2d_area_entered(area):
 			frozen = true;
 			await get_tree().create_timer(2).timeout
 			frozen = false
-
-
-		
-		
-
-
-		
+            
+		$PickupAudio.play()
 		print("hit powerup")
 
