@@ -60,7 +60,7 @@ func _on_timer_timeout():
 		elif events.front() == "blackout":
 			blackout.visible = true
 			progressBar.max_value = 6
-			timer.start(20)
+			timer.start(6)
 		progressBar.max_value = 20
 		animPlayer.play("event")
 		state = 2

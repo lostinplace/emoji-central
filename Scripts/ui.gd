@@ -7,13 +7,13 @@ var Player1_Sprites: Array[Sprite2D]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	countdownText.text=("3")
+	countdownText.text=("three")
 	$CountdownA.play()
 	await get_tree().create_timer(1).timeout
 	countdownText.text=("two")
 	$CountdownA.play()
 	await get_tree().create_timer(1).timeout
-	countdownText.text=("1")
+	countdownText.text=("one")
 	$CountdownA.play()
 	await get_tree().create_timer(1).timeout
 	countdownText.visible = false;
