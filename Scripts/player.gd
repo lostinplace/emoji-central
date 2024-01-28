@@ -17,7 +17,6 @@ var ghost = false
 @onready var sprite = $Sprite2D
 @onready var animPlayer = $AnimationPlayer
 @onready var plBullet = preload("res://Scenes/bullet.tscn")
-var my_state_machine
 
 var JokeHopper = preload("res://Scripts/JokeHopper.gd").JokeHopper
 var my_joke_hopper
@@ -60,6 +59,8 @@ func _ready():
 	await get_tree().create_timer(3).timeout
 	frozen = false
 
+func get_category():
+	return my_joke_hopper.my_category["category"]
 
 func damage(dmg):
 	life -= dmg
@@ -125,3 +126,28 @@ func _on_area_2d_body_entered(body):
 			damage(10);
 		body.queue_free();
 	 # Replace with function body.
+
+		
+	extends Node
+
+
+## This method plays an audio stream for a specific duration from a given offset
+#func play_audio_for_duration(stream, offset_ms, duration_s):
+#	# Assuming 'audio_player' is the name of your AudioStreamPlayer node
+#	var audio_player = $audio_player
+#
+#	# Load the stream and set the start offset
+#	audio_player.stream = stream
+#	audio_player.stream_playback.seek(offset_ms * 0.001) # Convert ms to seconds
+#
+#	# Start playing the audio
+#	audio_player.play()
+#
+#	# Set a timer to stop playback after the duration
+#	yield(get_tree().create_timer(duration_s), "timeout")
+#	audio_player.stop()
+#
+#	# Example usage
+#	func _ready():
+#	var my_stream = load("res://path_to_your_mp3_file.mp3")
+#	play_audio_for_duration(my_stream, 5000, 10) # Play 10 seconds of audio starting at 5000ms
