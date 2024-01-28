@@ -162,7 +162,7 @@ func _physics_process(_delta):
 		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
 			#direction.y += 1
 		if direction:
-			velocity = direction * SPEED
+			velocity = direction * SPEED * speedMod
 			lastLooked = direction
 
 	move_and_slide()
@@ -174,7 +174,7 @@ func _on_area_2d_body_entered(body):
 		var impacting_joke_type = body.joke.Category
 		var my_category = my_joke_hopper.my_category["category"]
 		if my_category == impacting_joke_type:
-			damage(10);
+			damage(10 * damageMod);
 		else:
 			$SplatAudio.play()
 		body.queue_free();
