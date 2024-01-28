@@ -58,9 +58,10 @@ libraries = {
 }
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-1, -2)
+position = Vector2(2.08165e-12, -1)
+scale = Vector2(1.02739, 0.977525)
 texture = ExtResource("3_x4shv")
-offset = Vector2(-2, 39)
+offset = Vector2(-2, 36)
 vframes = 4
 
 [node name="Area2D" type="Area2D" parent="."]
