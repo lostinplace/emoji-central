@@ -99,18 +99,22 @@ func _physics_process(delta):
 		#movement
 		var direction = Vector2.ZERO
 		velocity= Vector2.ZERO;
+		direction.x -= Input.get_joy_axis(controllerID, JOY_AXIS_LEFT_X) *-1
+		direction.y -= Input.get_joy_axis(controllerID, JOY_AXIS_LEFT_Y) *-1
+
 		if keyboard == true:
 			direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
-		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
-			direction.x -= 1
-		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):
-			direction.x += 1
-		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_UP):
-			direction.y -= 1
-		if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
-			direction.y += 1
+			direction = direction.normalized()
+		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_LEFT):
+			#direction.x -= 1
+		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_RIGHT):
+			#direction.x += 1
+		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_UP):
+			#direction.y -= 1
+		#if Input.is_joy_button_pressed(controllerID, JOY_BUTTON_DPAD_DOWN):
+			#direction.y += 1
 		if direction:
-			velocity = direction.normalized() * SPEED
+			velocity = direction * SPEED
 			lastLooked = direction
 
 	move_and_slide()
