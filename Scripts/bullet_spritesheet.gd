@@ -8,9 +8,7 @@ static var categories ={
 	"Hands": {"category": "Hands", "y-offset":0 },
 	"Baked Goods": {"category": "Baked Goods", "y-offset":1 },
 	"Sports": {"category": "Sports", "y-offset":2 },
-	"Plants": {"category": "Plants", "y-offset":3 },
 	"Traffic": {"category": "Traffic", "y-offset":4 },
-	"Water": {"category": "Water", "y-offset":5 },
 	"Music": {"category": "Music", "y-offset":6 },
 	"Animals": {"category": "Animals", "y-offset":7 }
 }
@@ -19,9 +17,7 @@ static var unused_categories = {
 	"Hands": {"category": "Hands", "y-offset":0 },
 	"Baked Goods": {"category": "Baked Goods", "y-offset":1 },
 	"Sports": {"category": "Sports", "y-offset":2 },
-	"Plants": {"category": "Plants", "y-offset":3 },
 	"Traffic": {"category": "Traffic", "y-offset":4 },
-	"Water": {"category": "Water", "y-offset":5 },
 	"Music": {"category": "Music", "y-offset":6 },
 	"Animals": {"category": "Animals", "y-offset":7 }
 }

@@ -8,7 +8,7 @@ class Joke:
 
 	static func get_random_joke_number() -> int:
 		# get a random number between 1 and 9
-		var result = randi() % 7 + 1
+		var result = randi() % 5 + 1
 		return result
 
 var bs = preload("res://Scripts/bullet_spritesheet.gd")
