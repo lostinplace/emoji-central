@@ -15,8 +15,8 @@ func _ready():
 	var rand = RandomNumberGenerator.new()
 	
 	var randomNumber = rand.randi_range(72,81)
-	spriteFrame = randomNumber;
-	powerupSprite.frame = randomNumber;
+	#spriteFrame = randomNumber;
+	#powerupSprite.frame = randomNumber;
 
 
 
