@@ -6,7 +6,7 @@ extends Control
 
 func _ready():
 	$Label.text = str("P", singleton.winner, " WINS!!")
-
+	$Winner.frame = 9*singleton.winner
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
