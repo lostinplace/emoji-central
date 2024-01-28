@@ -127,16 +127,6 @@ func _input(event):
 			bullet.global_position = bullet_position
 			
 			get_tree().current_scene.add_child(bullet)
-			for w in weaknesses.size():
-				if weaknesses[w] == next_joke.Category:
-					if w == 0:
-						bullet.change_outline_color("ff0000")
-					elif w == 1:
-						bullet.change_outline_color("0000ff")
-					elif w == 2:
-						bullet.change_outline_color("ffff00")
-					elif w == 3:
-						bullet.change_outline_color("00ff00")
 			bullet.velocity = lastLooked.normalized()
 			update_next_joke_icon()
 	if event.is_action_pressed("ui_cancel"):
@@ -145,20 +135,17 @@ func _input(event):
 func _process(_delta):
 	arrow.rotation = lastLooked.angle() - deg_to_rad(90)
 
+
+
 func update_next_joke_icon():
 	var next_joke_category = peek_next_joke().Category
-	for weak in weaknesses.size():
-		if weaknesses[weak] == next_joke_category:
-			if weak == 0:
-				nextShotRect.modulate = "ff000088"
-			elif weak == 1:
-				nextShotRect.modulate = "0000ff88"
-			elif weak == 2:
-				nextShotRect.modulate = "ffff0088"
-			elif weak == 3:
-				nextShotRect.modulate = "00ff0088"
-		else:
-			nextShotRect.modulate = "ffffff88"
+	
+	var weakness_color =main.weakness_colors.get(next_joke_category)
+	if weakness_color != null:
+		nextShotRect.modulate = weakness_color
+	else:
+		nextShotRect.modulate = "FFFFFF88"
+		
 	var peeked_joke = peek_next_joke()
 	var joke_rect = spritesheet.get_rect_for_joke(peeked_joke.JokeNumber, peeked_joke.Category)
 	nextShotIcon.region_rect = joke_rect
