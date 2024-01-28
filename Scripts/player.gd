@@ -134,7 +134,7 @@ func _on_area_2d_area_entered(area):
 		print(area.spriteFrame)
 		
 		var spriteFrame = area.spriteFrame;
-		
+		area.queue_free();
 		#Heart
 		if(spriteFrame == 72):
 			#Heal some health
