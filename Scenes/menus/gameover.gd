@@ -19,3 +19,9 @@ func _on_button_pressed():
 
 func _on_button_2_pressed():
 	get_tree().change_scene_to_packed(main)
+
+func _on_MainMenu_pressed():
+	get_tree().change_scene_to_packed(mainmenu)
+
+func _on_PlayAgain_pressed():
+	get_tree().change_scene_to_packed(main)
