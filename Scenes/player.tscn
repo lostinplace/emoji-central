@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://sj575hj0a0eh"]
+[gd_scene load_steps=9 format=3 uid="uid://sj575hj0a0eh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wef07"]
 [ext_resource type="Texture2D" uid="uid://uliqpr1o1im2" path="res://Assets/players.png" id="2_c47p8"]
 [ext_resource type="Texture2D" uid="uid://dkkvn0x447av6" path="res://Assets/PlayerArrows.png" id="3_x4shv"]
+[ext_resource type="PackedScene" uid="uid://dd31njmxjjw86" path="res://Scenes/PlayerUIDisplayMini.tscn" id="4_x5t8j"]
 
 [sub_resource type="Animation" id="Animation_encp2"]
 length = 0.001
@@ -59,7 +60,7 @@ libraries = {
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture = ExtResource("3_x4shv")
-offset = Vector2(-2, 45)
+offset = Vector2(-1, 37)
 vframes = 4
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -72,6 +73,13 @@ shape = SubResource("CircleShape2D_hafrt")
 
 [node name="fireDelay" type="Timer" parent="."]
 one_shot = true
+
+[node name="Base" parent="." instance=ExtResource("4_x5t8j")]
+offset_left = 29.0
+offset_top = -30.0
+offset_right = 29.0
+offset_bottom = -30.0
+scale = Vector2(0.3, 0.3)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
