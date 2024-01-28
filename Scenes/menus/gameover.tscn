@@ -47,6 +47,7 @@ scale = Vector2(1.06111, 1.06111)
 texture = ExtResource("2_tyqj8")
 
 [node name="PlayAgain" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 247.0
 offset_top = 808.0
 offset_right = 861.0
