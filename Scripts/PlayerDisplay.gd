@@ -3,8 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if has_meta("PlayerName"):
-		$Panel/Label.text = get_meta("PlayerName")
+	#if has_meta("PlayerName"):
+		#$Panel/Label.text = get_meta("PlayerName")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
