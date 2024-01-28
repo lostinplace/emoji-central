@@ -30,8 +30,8 @@ var ghost = false
 var my_state_machine
 
 var JokeHopper = preload("res://Scripts/JokeHopper.gd").JokeHopper
-var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
 var my_joke_hopper
+var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -64,7 +64,7 @@ func _ready():
 		PlayerNumber = get_meta("PlayerNumber")
 		print(PlayerNumber)
 	
-
+	var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
 	var tmp_category = spritesheet.get_unused_category()
 	var tmp_cat_name = tmp_category.category
 	
@@ -75,8 +75,6 @@ func _ready():
 	await get_tree().create_timer(3).timeout
 	get_tree()
 	
-	for i in main.players.size():
-		weaknesses.append(main.players[i].get_category())
 	update_next_joke_icon()
 	frozen = false
 	regenDelay.start(regen)
