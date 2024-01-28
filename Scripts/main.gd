@@ -10,6 +10,13 @@ var playersAlive = []
 var players: Array
 var bs = preload("res://Scripts/bullet_spritesheet.gd")
 
+static var weakness_colors : Dictionary = {}
+static var player_colors: Dictionary = {
+	0: "FF000088",
+	1: "0000FF88",
+	2: "FFFF0088",
+	3: "00FF0088"
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,7 +30,8 @@ func _ready():
 		add_child(player)
 		player.set_jokehopper(random_cat_names[i])
 		players.append(player)
-				
+		var player_color = player_colors[i]
+		weakness_colors[random_cat_names[i]] = player_color
 		var player_category = player.get_category()
 		$UI.set_player_vulnerability(i, player_category)
 		

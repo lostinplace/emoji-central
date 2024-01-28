@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 @onready var arrow = $Sprite2D2
 @onready var fireDelayTimer = $fireDelay
 @export var firingDelay: float
+@onready var nextShotRect = $ColorRect
+@onready var nextShotIcon = $q0
 
 @onready var regenDelay = $regenDelay
 var damageMod = 1.0 #for events dont touch this
@@ -28,6 +30,7 @@ var ghost = false
 var my_state_machine
 
 var JokeHopper = preload("res://Scripts/JokeHopper.gd").JokeHopper
+var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
 var my_joke_hopper
 
 
@@ -61,7 +64,7 @@ func _ready():
 		PlayerNumber = get_meta("PlayerNumber")
 		print(PlayerNumber)
 	
-	var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
+
 	var tmp_category = spritesheet.get_unused_category()
 	var tmp_cat_name = tmp_category.category
 	
@@ -72,6 +75,9 @@ func _ready():
 	await get_tree().create_timer(3).timeout
 	get_tree()
 	
+	for i in main.players.size():
+		weaknesses.append(main.players[i].get_category())
+	update_next_joke_icon()
 	frozen = false
 	regenDelay.start(regen)
 
@@ -122,22 +128,28 @@ func _input(event):
 			
 			
 			get_tree().current_scene.add_child(bullet)
-			for w in weaknesses.size():
-				if weaknesses[w] == next_joke.Category:
-					if w == 0:
-						bullet.change_outline_color("ff0000")
-					elif w == 1:
-						bullet.change_outline_color("0000ff")
-					elif w == 2:
-						bullet.change_outline_color("ffff00")
-					elif w == 3:
-						bullet.change_outline_color("00ff00")
 			bullet.velocity = lastLooked.normalized()
+			update_next_joke_icon()
 	if event.is_action_pressed("ui_cancel"):
 		damage(10)
 
 func _process(_delta):
 	arrow.rotation = lastLooked.angle() - deg_to_rad(90)
+
+
+
+func update_next_joke_icon():
+	var next_joke_category = peek_next_joke().Category
+	
+	var weakness_color =main.weakness_colors.get(next_joke_category)
+	if weakness_color != null:
+		nextShotRect.modulate = weakness_color
+	else:
+		nextShotRect.modulate = "FFFFFF88"
+		
+	var peeked_joke = peek_next_joke()
+	var joke_rect = spritesheet.get_rect_for_joke(peeked_joke.JokeNumber, peeked_joke.Category)
+	nextShotIcon.region_rect = joke_rect
 
 func _physics_process(_delta):
 	

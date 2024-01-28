@@ -76,6 +76,7 @@ vframes = 4
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_j33qr")
+volume_db = 10.0
 autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
