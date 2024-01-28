@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcedcmr16n458"]
+[gd_scene load_steps=12 format=3 uid="uid://dcedcmr16n458"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_7nm6v"]
 [ext_resource type="FontFile" uid="uid://dsrj86ask6um1" path="res://Assets/fonts/cut it out DEMO.otf" id="3_38681"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cubbdcv3occxs" path="res://Assets/green_border.png" id="5_6lqrg"]
 [ext_resource type="Texture2D" uid="uid://7fsn7y02mvp4" path="res://Assets/yellow_border.png" id="6_kaqti"]
 [ext_resource type="PackedScene" uid="uid://dwotayg5o1mws" path="res://Scenes/PlayerUIDisplay.tscn" id="6_uxkvl"]
+[ext_resource type="Script" path="res://Scenes/LevelMusic.gd" id="8_6b12f"]
+[ext_resource type="AudioStream" uid="uid://bkcxrqrsf8s4p" path="res://Assets/Sounds/music/Emoji Central_Phase2.mp3" id="8_cspd2"]
+[ext_resource type="AudioStream" uid="uid://dvyn6sbh4d8ab" path="res://Assets/Sounds/fx/Count down_v1.wav" id="9_vyg0l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rd31c"]
 font_size = 200
@@ -86,3 +89,10 @@ texture = ExtResource("5_6lqrg")
 [node name="YellowBorder" type="Sprite2D" parent="."]
 position = Vector2(128, 832)
 texture = ExtResource("6_kaqti")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_cspd2")
+script = ExtResource("8_6b12f")
+
+[node name="CountdownA" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_vyg0l")

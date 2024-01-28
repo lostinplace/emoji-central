@@ -61,7 +61,8 @@ func _ready():
 		PlayerNumber = get_meta("PlayerNumber")
 		print(PlayerNumber)
 	
-	var tmp_category = preload("res://Scripts/bullet_spritesheet.gd").get_random_category()
+	var spritesheet = preload("res://Scripts/bullet_spritesheet.gd")
+	var tmp_category = spritesheet.get_unused_category()
 	var tmp_cat_name = tmp_category.category
 	my_joke_hopper = JokeHopper.new(tmp_cat_name, 5)
 	queue_rects = my_joke_hopper.get_sprite_rects()
@@ -174,6 +175,8 @@ func _on_area_2d_body_entered(body):
 		var my_category = my_joke_hopper.my_category["category"]
 		if my_category == impacting_joke_type:
 			damage(10);
+		else:
+			$SplatAudio.play()
 		body.queue_free();
 	if body.is_in_group("alien"):
 		damage(22)
@@ -232,16 +235,13 @@ func _on_area_2d_area_entered(area):
 			frozen = true;
 			await get_tree().create_timer(2).timeout
 			frozen = false
-			
+
 		#hat
 		if(spriteFrame == 78):
 			$Sprite2D/HatSprite.visible = true;
 
+			
+		$PickupAudio.play()
 
-		
-		
-
-
-		
 		print("hit powerup")
 

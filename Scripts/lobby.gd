@@ -59,6 +59,8 @@ func new_player_joined(ID):
 		singleton.player4 = ID
 	players += 1
 	singleton.playerCount += 1
+	$PlayerStart.play()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
