@@ -43,9 +43,6 @@ func lightning_shower(): #it says meteor because it was a meteor and i dont feel
 		await get_tree().create_timer(4).timeout
 	$ThunderSound.play()
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		lightning_shower()
 
 func _on_timer_timeout():
 	if state == 0:
